@@ -157,7 +157,7 @@ export const posts = [
       size: "約 93.3 MB",
       gameVersion: "Steam 最新版対応",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip",
-      mirrorUrl: "https://link-hub.net/10208061/wGrFvCowm5eP",
+      mirrorUrl: "https://workupload.com/file/C8khwB7Bt9g",
       supportUrl: "https://ofuse.me/o?uid=227788"
     },
     content: `
@@ -248,7 +248,7 @@ export const posts = [
       size: "約 443 MB",
       gameVersion: "Steam / Xbox Game Pass 最新版",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak", // GitHub Releasesの1クリック直DLリンク
-      mirrorUrl: "https://link-hub.net/10208061/wGrFvCowm5eP", // 収益化アップローダー（Linkvertise + WorkUpload）のリンク
+      mirrorUrl: "https://workupload.com/file/NQ2BQR9sRD9", // WorkUpload ミラーリンク
       supportUrl: "https://ofuse.me/o?uid=227788" // OFUSE 投げ銭・支援リンク
     },
     content: `
