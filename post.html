@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事詳細 | JP MOD PORTAL</title>
+  <meta name="description" content="PCゲーム日本語化MODのダウンロードおよび導入手順ガイド。">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span class="logo-text">JP MOD PORTAL</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./" class="nav-link">ホーム</a>
+        <a href="./#mods" class="nav-link">日本語化MOD一覧</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- パンくずリスト -->
+  <div class="container breadcrumb-container">
+    <nav class="breadcrumbs">
+      <a href="./">ホーム</a> &gt; <a href="./#mods">MOD一覧</a> &gt; <span id="breadcrumb-title">記事読み込み中...</span>
+    </nav>
+  </div>
+
+  <main class="container main-layout">
+    <!-- 記事本体エリア -->
+    <article class="content-area article-post">
+      <!-- 記事ヘッダー -->
+      <header class="post-header">
+        <div class="post-meta-top">
+          <span class="category-badge" id="post-category">RPG / FPS</span>
+          <span class="post-date" id="post-date">2026.10.18</span>
+          <span class="post-version" id="post-version">MOD Ver 1.0</span>
+        </div>
+        <h1 class="post-title" id="post-title">読み込み中...</h1>
+        <p class="post-lead" id="post-summary"></p>
+      </header>
+
+      <!-- アイキャッチ画像（記事の画像が最も映える設計） -->
+      <div class="post-featured-image-wrapper" id="featured-image-wrapper">
+        <img id="post-featured-image" src="" alt="Mod Screenshot" class="post-featured-image">
+      </div>
+
+      <!-- 記事上部 広告枠（導入後、読者が一番最初に目にする高CTR枠） -->
+      <div class="ad-banner article-ad-slot">
+        <div class="ad-tag">SPONSORED</div>
+        <div class="ad-content-placeholder">
+          <span class="ad-dummy-title">🎮 快適なゲーミング環境をつくる光回線</span>
+          <p class="ad-dummy-desc">大容量MODやゲームのダウンロードも一瞬！超高速・低遅延の回線プラン</p>
+        </div>
+      </div>
+
+      <!-- 目次 -->
+      <nav class="table-of-contents" id="toc-box">
+        <div class="toc-title">📑 目次</div>
+        <ul id="toc-list">
+          <!-- JSで自動抽出 -->
+        </ul>
+      </nav>
+
+      <!-- 記事本文（Markdownからレンダリング） -->
+      <div class="post-content" id="post-body">
+        <!-- 記事本文がここに展開されます -->
+      </div>
+
+      <!-- ★心理的最高CTR★ ダウンロード直前 広告枠（行動直前の黄金位置） -->
+      <div class="ad-banner download-ad-slot">
+        <div class="ad-tag">PR</div>
+        <div class="ad-content-placeholder">
+          <span class="ad-dummy-title">PCゲームを安全にプレイするための必須セキュリティ</span>
+          <p class="ad-dummy-desc">Modや非公式パッチの導入時にも安心。ゲーミングモード搭載セキュリティソフト</p>
+        </div>
+      </div>
+
+      <!-- ダウンロードボックス（シンプルで押しやすいカード） -->
+      <div class="download-card" id="download-box">
+        <div class="download-card-header">
+          <div class="download-badge">FREE DOWNLOAD</div>
+          <h3 class="download-title" id="dl-title">日本語化MOD パッケージ</h3>
+        </div>
+        <div class="download-details">
+          <div class="dl-detail-row">
+            <span class="dl-label">ファイル形式:</span>
+            <span class="dl-val" id="dl-format">PAKファイル / Zip</span>
+          </div>
+          <div class="dl-detail-row">
+            <span class="dl-label">ファイル容量:</span>
+            <span class="dl-val" id="dl-size">約 440 MB</span>
+          </div>
+          <div class="dl-detail-row">
+            <span class="dl-label">対応バージョン:</span>
+            <span class="dl-val" id="dl-game-version">最新 Steam / Game Pass版</span>
+          </div>
+        </div>
+        <div class="download-actions">
+          <a href="#" id="dl-button-link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span id="dl-button-text">MODファイルをダウンロード</span>
+          </a>
+          <p class="dl-notice">※外部アップローダー（Google Drive / MEGA 等）へ安全に移動します。</p>
+        </div>
+      </div>
+
+      <!-- 記事下部 広告枠（読了後の余韻クリック枠） -->
+      <div class="ad-banner article-bottom-ad-slot">
+        <div class="ad-tag">スポンサーリンク</div>
+        <div class="ad-content-placeholder">
+          <span class="ad-dummy-title">Steamおすすめコントローラー 特集</span>
+          <p class="ad-dummy-desc">背面ボタン搭載！PCゲームの操作性を格段に上げるプロ仕様パッド</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <div class="sidebar-widget ad-widget">
+        <div class="ad-tag">広告</div>
+        <div class="ad-content-placeholder sidebar-ad-slot">
+          <span class="ad-dummy-title">月額定額で遊び放題！</span>
+          <p class="ad-dummy-desc">最新大作もデイワン配信。PC Game Passの登録はこちら</p>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">📌 おすすめのMOD記事</h3>
+        <ul class="widget-list" id="sidebar-related-posts">
+          <!-- JSで生成 -->
+        </ul>
+      </div>
+
+      <div class="sidebar-widget sticky-widget ad-widget">
+        <div class="ad-tag">広告</div>
+        <div class="ad-content-placeholder sidebar-ad-slot">
+          <span class="ad-dummy-title">ゲーム実況・配信おすすめマイク</span>
+          <p class="ad-dummy-desc">ノイズキャンセリング搭載の高音質USBマイク</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand">JP MOD PORTAL</p>
+        <p class="footer-desc">本サイトで配布されている日本語化Modはすべて有志ファンによる非公式プロジェクトです。各ゲームの権利は各著作権者に帰属します。</p>
+      </div>
+      <div class="footer-links">
+        <a href="./">ホーム</a>
+        <a href="./#mods">MOD一覧</a>
+        <a href="./disclaimer.html">免責事項・プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 JP MOD PORTAL. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/post.js"></script>
+</body>
+</html>
