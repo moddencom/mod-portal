@@ -30,7 +30,7 @@
   <!-- パンくずリスト -->
   <div class="container breadcrumb-container">
     <nav class="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/mods.html">日本語化MOD一覧</a> &gt; <span id="breadcrumb-title">【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）</span>
+      <a href="/">ホーム</a> &gt; <a href="/mods.html">日本語化MOD一覧</a> &gt; <span id="breadcrumb-title">【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）</span>
     </nav>
   </div>
 
@@ -40,17 +40,17 @@
       <!-- 記事ヘッダー -->
       <header class="post-header">
         <div class="post-meta-top">
-          <span class="category-badge" id="post-category">RPG / サバイバル</span>
+          <span class="category-badge" id="post-category">ユーティリティ / 改善</span>
           <span class="post-date" id="post-date">2026-10-18</span>
           <span class="post-version" id="post-version">Ver 1.0 (2026.10.18)</span>
         </div>
-        <h1 class="post-title" id="post-title">【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）</h1>
-        <p class="post-lead" id="post-summary">ターン制ゾンビサバイバルRPG『Dead Age』の有志による完全日本語化MODです。全編にわたる会話・ストーリーの映画吹き替え風ローカライズ、敵名・スキル・装備名の自然な日本語化、さらに高品質日本語フォント（BIZ UDPゴシック）への完全置換を実施。</p>
+        <h1 class="post-title" id="post-title">【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）</h1>
+        <p class="post-lead" id="post-summary">ターン制ゾンビRPG『Dead Age』で夜間探索や雷雨の戦闘が暗すぎて敵が見えない問題を解消する視認性向上MODです。2D UI（文字・HPバー）の白飛びを起こさず、3D背景・キャラクターのみを美しく自然に照らし出します。ゲーム内リアルタイム調整・ホットキー（F5/F7/F8/F10）対応。</p>
       </header>
 
       <!-- アイキャッチ画像（記事の画像が最も映える設計） -->
       <div class="post-featured-image-wrapper" id="featured-image-wrapper">
-        <img id="post-featured-image" src="/images/dead-age-hero.png" alt="【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）" class="post-featured-image">
+        <img id="post-featured-image" src="/images/dead-age-brightness-hero.jpg" alt="【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）" class="post-featured-image">
       </div>
 
       <!-- 記事上部 広告枠（導入後、読者が一番最初に目にする高CTR枠） -->
@@ -76,74 +76,120 @@
       <div class="post-content" id="post-body">
         <!-- POST_BODY_START -->
 
-      <h2>『Dead Age』完全日本語化MODについて</h2>
-      <p>『Dead Age』は、文明崩壊後の世界を生き抜くターン制コマンドバトルRPGです。キャンプ運営、仲間との人間関係、パーマデス、そしてマルチエンディングなど奥深いゲーム性を誇りますが、公式日本語は非対応（または機械翻訳）となっていました。</p>
-      <p>本MODでは、プレイヤーが没入できるよう<strong>全編のストーリー・セリフ・独白を洋画吹き替え風の自然な日本語に徹底ローカライズ</strong>。さらに機械翻訳特有の不自然な敵名（「レイジング・ベイグラント」「アンデッドラボアシスタント」等）や装備品・スキルの名称、UIレイアウトに至るまで完全に洗練しています。</p>
+      <h2>『Dead Age』夜間・戦闘 明るさ＆視認性調整MODについて</h2>
+      <p>『Dead Age』をプレイしていて、<strong>「夜の探索や雨・雷の戦闘シーンが暗すぎて、敵やキャラクターがどこにいるのか全然見えない…！」</strong>と困ったことはありませんか？</p>
+      <p>本作にはゲーム内設定にガンマや輝度の調整項目が存在せず、モニタ自体の明るさを上げると今度はUI文字やHPバーが白飛びして読めなくなってしまうという課題がありました。</p>
+      <p>本MODは、Unityエンジン内部の<strong>環境光（Ambient Light）およびカメラ連動の補助照明（Camera Fill Light）</strong>を高度に制御することで、<strong>UIのコントラストを保ったまま、暗闇に沈んでいた敵や味方、3D背景だけをクッキリ美しく照らし出す</strong>専用ユーティリティMODです。</p>
 
       <blockquote>
-        <strong>💡 本MODの特徴:</strong><br>
-        ・<strong>完全自然なストーリー翻訳:</strong> 主人公ジャックのタフな独白、シェリフやトリッシュ、ハンクらの個性豊かな掛け合いを映画さながらの台詞回しに全面刷新<br>
-        ・<strong>モリサワ製 高品質ユニバーサルデザインフォント採用:</strong> 商用・再配布フリーの「BIZ UDPゴシック Bold」をUnityアセットに直接組み込み、見やすく美しいタイポグラフィを実現<br>
-        ・<strong>戦闘・敵名・装備の完全監修:</strong> 「耐久力」「会心率」「レジスト」「ニット帽」などゲーム用語として直感的な表記に統一<br>
-        ・<strong>ワンタッチ導入:</strong> ゲームフォルダにドラッグ＆ドロップするだけで即座にプレイ可能
+        <strong>💡 本MODの主な特徴:</strong><br>
+        ・<strong>UI文字が白飛びしない:</strong> 2D UIレイヤーを除外し、3Dオブジェクト・背景のみを自然にライティング<br>
+        ・<strong>ゲーム内リアルタイム調整:</strong> プレイ中にホットキー（F5/F7/F8）で即時調光、F10でGUIスライダー画面を開閉<br>
+        ・<strong>選べる4段階プリセット:</strong> 「標準」「夜間おすすめ」「クリアナイト」「最大(昼間級)」をワンクリック適用<br>
+        ・<strong>設定の自動保存:</strong> スライダーで調整した設定は次回起動時にもそのまま保持<br>
+        ・<strong>完全共存:</strong> 当サイトで配布中の「Dead Age 完全日本語化MOD」とも100%安全に併用可能
       </blockquote>
 
-      <h2>日本語化MODのスクリーンショット</h2>
-      <p>タイトル画面、サバイバル手帳、NPCたちとの熱い会話ドラマ、ショップや装備画面に至るまで、美しい日本語フォント（BIZ UDPゴシック）と自然な台詞回しで快適にプレイ可能です。</p>
+      <h2>ゲーム内スクリーンショット</h2>
+      <p>実際に本MODを適用したゲーム画面です。暗闇だったハイウェイの戦闘シーンでも、敵ゾンビの姿や味方キャラクターが鮮明に浮かび上がり、快適にコマンド選択を行えます。</p>
 
       <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
         <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ タイトル画面（日本語メニュー表示）</h4>
-          <img src="/images/dead-age-preview-title.jpg" alt="Dead Age 日本語化タイトル画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ 夜間ハイウェイ戦闘（視認性向上・UI白飛びなし）</h4>
+          <img src="/images/dead-age-brightness-preview.jpg" alt="Dead Age 明るさ調整MOD 適用後戦闘画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
         </div>
 
         <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ハンク＆リディアの会話シーン（映画吹き替え調の自然な台詞）</h4>
-          <img src="/images/dead-age-preview-hank-lydia.jpg" alt="Dead Age ハンクのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
-          <img src="/images/dead-age-preview-lydia.jpg" alt="Dead Age リディアのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
-          <img src="/images/dead-age-preview-hank.jpg" alt="Dead Age ハンクの掛け合い" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ショップ＆アイテムインベントリ（UI・装備品名の最適化）</h4>
-          <img src="/images/dead-age-preview-shop.jpg" alt="Dead Age ショップ画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ゲーム内設定画面 [F10キー]（マウス操作・スライダー・プリセット）</h4>
+          <img src="/images/dead-age-brightness-gui.jpg" alt="Dead Age 明るさ調整MOD 設定メニュー" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
         </div>
       </div>
 
+      <h2>操作方法・ショートカットキー</h2>
+      <p>ゲームプレイ中、いつでもキーボードから瞬時に明るさを切り替えることができます：</p>
+
+      <div style="overflow-x: auto; margin: 16px 0;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; background: rgba(255, 255, 255, 0.03); border-radius: 8px; overflow: hidden;">
+          <thead>
+            <tr style="background: rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+              <th style="padding: 12px 16px; width: 25%;">キー</th>
+              <th style="padding: 12px 16px; width: 35%;">機能</th>
+              <th style="padding: 12px 16px;">説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 10px 16px;"><code>[F5]</code></td>
+              <td style="padding: 10px 16px;"><strong>ブースト ON / OFF</strong></td>
+              <td style="padding: 10px 16px;">明るさブーストの有効／無効（バニラ標準）を即座に切り替えます</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 10px 16px;"><code>[F8]</code> / <code>[+]</code></td>
+              <td style="padding: 10px 16px;"><strong>明るさアップ</strong></td>
+              <td style="padding: 10px 16px;">明るさを +0.2x ずつ段階的に明るくします（最大 4.0x）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 10px 16px;"><code>[F7]</code> / <code>[-]</code></td>
+              <td style="padding: 10px 16px;"><strong>明るさダウン</strong></td>
+              <td style="padding: 10px 16px;">明るさを -0.2x ずつ段階的に暗くします（最小 0.5x）</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+              <td style="padding: 10px 16px;"><code>[F6]</code></td>
+              <td style="padding: 10px 16px;"><strong>標準リセット</strong></td>
+              <td style="padding: 10px 16px;">初期値（バニラ標準の1.0x）に一括リセットします</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 16px;"><code>[F10]</code></td>
+              <td style="padding: 10px 16px;"><strong>設定メニュー開閉</strong></td>
+              <td style="padding: 10px 16px;">マウス操作できる詳細設定ウィンドウ（GUI）を表示／非表示にします</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>※キー操作時には、画面上部に現在の明るさ倍率（例: <code>★ 明るさブースト: ON (1.8x)</code>）が一時的にポップアップ表示されます。</p>
+
       <h2>MODの導入手順（ステップ解説）</h2>
-      <p>導入は非常にシンプルです。ダウンロードしたZIPファイルを解凍し、ゲームフォルダに上書きするだけで完了します。</p>
+      <p>導入は非常にシンプルです。ファイルをゲームのインストールフォルダに配置するだけで完了します。</p>
 
       <div class="step-box">
         <span class="step-num">STEP 1</span>
         <h3>MODファイルのダウンロード</h3>
-        <p>下記ダウンロードエリアより、最新のMODファイル（<code>DeadAge_JP_Mod_v1.0.zip</code>）をダウンロードします。</p>
+        <p>下記ダウンロードエリアより、MODファイル（<code>DeadAge_Brightness_Mod_v1.0.zip</code>）をダウンロードします。</p>
       </div>
 
       <div class="step-box">
         <span class="step-num">STEP 2</span>
         <h3>ゲームのインストール先フォルダを開く</h3>
         <p>Steamライブラリから『Dead Age』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>
-        <p>ゲームの実行ファイル（<code>DeadAge.exe</code>）や <code>DeadAge_Data</code> フォルダが存在するフォルダが開きます。</p>
+        <p><code>DeadAge.exe</code> が存在するゲームのルートフォルダが開きます。</p>
       </div>
 
       <div class="step-box">
         <span class="step-num">STEP 3</span>
-        <h3>ファイルを上書き配置してゲーム起動</h3>
-        <p>ダウンロードしたZIPを解凍し、中にある <code>DeadAge_Data</code> フォルダを『Dead Age』のインストールフォルダにドラッグ＆ドロップして上書きしてください。</p>
-        <p>ゲームを起動し、言語設定（画面右上の国旗アイコン）で「中文（中国国旗）」を選択すると、日本語化が完全に反映されます。</p>
+        <h3>ファイルをコピーしてゲーム起動</h3>
+        <p>ダウンロードしたZIPファイルを解凍し、中にある以下のファイル・フォルダをすべて『Dead Age』のインストールフォルダ（DeadAge.exeと同じ場所）にドラッグ＆ドロップでコピーしてください：</p>
+        <ul>
+          <li><code>winhttp.dll</code></li>
+          <li><code>doorstop_config.ini</code></li>
+          <li><code>BepInEx</code> (フォルダ)</li>
+        </ul>
+        <p>あとは通常どおりSteamからゲームを起動するだけでModが自動的に読み込まれます！</p>
       </div>
 
       <h2>アンインストール方法（元の状態に戻す）</h2>
-      <p>いつでも元の初期状態（公式バニラ）に戻すことができます。<br>
-      Steamライブラリで『Dead Age』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」をクリックしてください。Steamによって公式ファイルが自動再ダウンロードされ、安全に復元されます。</p>
+      <p>配置した以下のファイル・フォルダを削除するだけで、即座に元の状態に戻ります：</p>
+      <ul>
+        <li><code>winhttp.dll</code></li>
+        <li><code>doorstop_config.ini</code></li>
+        <li><code>BepInEx</code> (フォルダ)</li>
+      </ul>
 
       <h2>免責事項・注意事項</h2>
       <div style="background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;">
         <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-          <li><strong>非公式パッチ:</strong> 本MODは一個人ファンによる有志の非公式日本語化パッチです。開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。公式サポートへのお問い合わせは固くお控えください。</li>
-          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合、セーブデータの破損、トラブル等に関しましても、制作者は一切の責任を負いかねます。大切なデータがある場合は事前のバックアップを推奨します。</li>
-          <li><strong>フォントライセンス:</strong> ゲーム内に組み込まれている日本語フォント「BIZ UDPゴシック」は、株式会社モリサワが提供するオープンソースフォント（SIL Open Font License 1.1）に基づき、正規に同梱・利用されています。</li>
-          <li><strong>著作権について:</strong> ゲーム本編のキャラクター、テキスト原案、画像、プログラム等の著作権はすべて原著作者に帰属します。本MODファイルの商用販売や無断再配布は禁止いたします。</li>
+          <li><strong>非公式ツール:</strong> 本MODは一個人ファンによる非公式の視認性改善ツールです。ゲームの開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。</li>
+          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合等に関しましても、制作者は責任を負いかねます。</li>
+          <li><strong>日本語化MODとの併用について:</strong> 当サイトの「Dead Age 完全日本語化MOD」と完全に互換性があり、併用してプレイいただけます。</li>
         </ul>
       </div>
     
@@ -180,7 +226,7 @@
           </div>
           <div class="dl-detail-row">
             <span class="dl-label">ファイル容量:</span>
-            <span class="dl-val" id="dl-size">約 93.3 MB</span>
+            <span class="dl-val" id="dl-size">約 646 KB</span>
           </div>
           <div class="dl-detail-row">
             <span class="dl-label">対応バージョン:</span>
@@ -190,7 +236,7 @@
         <div class="download-actions-hybrid">
           <!-- メイン高速ダウンロード（GitHub Releases） -->
           <div class="dl-primary-group">
-            <a href="https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip" id="dl-button-main" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+            <a href="https://github.com/moddencom/mod-portal/releases/download/v1.2.0/DeadAge_Brightness_Mod_v1.0.zip" id="dl-button-main" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
               <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -199,7 +245,7 @@
               <span>高速ダウンロード (GitHub)</span>
             </a>
             <!-- ミラーダウンロード（収益化アップローダー枠） -->
-            <a href="https://link-hub.net/10208061/wGrFvCowm5eP" id="dl-button-mirror" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+            <a href="https://link-center.net/10208061/PTukAoeAXoCN" id="dl-button-mirror" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
               <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
                 <path d="M12 12v9"></path>
