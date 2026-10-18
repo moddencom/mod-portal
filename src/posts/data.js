@@ -19,7 +19,7 @@ export const posts = [
       size: "約 443 MB",
       gameVersion: "Steam / Xbox Game Pass 最新版",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak", // GitHub Releasesの1クリック直DLリンク
-      mirrorUrl: "#mirror-link", // 収益化アップローダー（KatFile / WorkUpload等）のリンク
+      mirrorUrl: "https://link-hub.net/10208061/wGrFvCowm5eP", // 収益化アップローダー（Linkvertise + WorkUpload）のリンク
       supportUrl: "#support-link" // 投げ銭・支援（OFUSE / BOOTH / Buy Me a Coffee等）のリンク
     },
     content: `
