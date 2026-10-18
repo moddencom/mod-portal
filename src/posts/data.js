@@ -19,7 +19,7 @@ export const posts = [
       size: "約 646 KB",
       gameVersion: "Steam 最新版対応",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.2.0/DeadAge_Brightness_Mod_v1.0.zip",
-      mirrorUrl: "https://link-center.net/10208061/PTukAoeAXoCN",
+      mirrorUrl: "https://workupload.com/file/xtVV9pnxhS9",
       supportUrl: "https://ofuse.me/o?uid=227788"
     },
     content: `
