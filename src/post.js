@@ -1,4 +1,5 @@
 import { posts } from './posts/data.js';
+import { initAdRotator } from './ads.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -56,17 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
       </li>
     `).join('');
   }
+
+  // 広告自動ローテーション開始
+  initAdRotator();
 });
 
 function generateTOC(contentElement) {
   const tocList = document.getElementById('toc-list');
+  if (!contentElement || !tocList) return;
   const headings = contentElement.querySelectorAll('h2');
   
-  if (!headings.length || !tocList) {
+  if (!headings.length) {
     document.getElementById('toc-box')?.remove();
     return;
   }
 
+  tocList.innerHTML = '';
   headings.forEach((heading, idx) => {
     const headingId = `heading-${idx}`;
     heading.id = headingId;

@@ -1,4 +1,5 @@
 import { posts } from './posts/data.js';
+import { initAdRotator } from './ads.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const listContainer = document.getElementById('articles-list');
@@ -64,4 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderPosts(filtered);
     });
   }
+
+  // 広告自動ローテーション開始
+  initAdRotator();
 });
