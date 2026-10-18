@@ -20,7 +20,7 @@ export const posts = [
       gameVersion: "Steam / Xbox Game Pass 最新版",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak", // GitHub Releasesの1クリック直DLリンク
       mirrorUrl: "https://link-hub.net/10208061/wGrFvCowm5eP", // 収益化アップローダー（Linkvertise + WorkUpload）のリンク
-      supportUrl: "#support-link" // 投げ銭・支援（OFUSE / BOOTH / Buy Me a Coffee等）のリンク
+      supportUrl: "https://ofuse.me/o?uid=227788" // OFUSE 投げ銭・支援リンク
     },
     content: `
       <h2>『High on Life』日本語化MODについて</h2>
