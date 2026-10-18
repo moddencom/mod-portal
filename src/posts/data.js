@@ -36,8 +36,26 @@ export const posts = [
       </blockquote>
 
       <h2>日本語化MODのスクリーンショット</h2>
-      <p>サバイバル手帳のUI、探索イベント、キャラクターの会話ログなどが以下のように美しく表示されます。</p>
-      <img src="/images/dead-age-preview-gameplay.png" alt="Dead Age 日本語化ゲーム画面" />
+      <p>タイトル画面、サバイバル手帳、NPCたちとの熱い会話ドラマ、ショップや装備画面に至るまで、美しい日本語フォント（BIZ UDPゴシック）と自然な台詞回しで快適にプレイ可能です。</p>
+
+      <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
+        <div>
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ タイトル画面（日本語メニュー表示）</h4>
+          <img src="/images/dead-age-preview-title.jpg" alt="Dead Age 日本語化タイトル画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ハンク＆リディアの会話シーン（映画吹き替え調の自然な台詞）</h4>
+          <img src="/images/dead-age-preview-hank-lydia.jpg" alt="Dead Age ハンクのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
+          <img src="/images/dead-age-preview-lydia.jpg" alt="Dead Age リディアのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
+          <img src="/images/dead-age-preview-hank.jpg" alt="Dead Age ハンクの掛け合い" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ショップ＆アイテムインベントリ（UI・装備品名の最適化）</h4>
+          <img src="/images/dead-age-preview-shop.jpg" alt="Dead Age ショップ画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+        </div>
+      </div>
 
       <h2>MODの導入手順（ステップ解説）</h2>
       <p>導入は非常にシンプルです。ダウンロードしたZIPファイルを解凍し、ゲームフォルダに上書きするだけで完了します。</p>
@@ -63,13 +81,18 @@ export const posts = [
       </div>
 
       <h2>アンインストール方法（元の状態に戻す）</h2>
-      <p>Steamライブラリで『Dead Age』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」をクリックしてください。自動的に元の初期状態へ復元されます。</p>
+      <p>いつでも元の初期状態（公式バニラ）に戻すことができます。<br>
+      Steamライブラリで『Dead Age』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」をクリックしてください。Steamによって公式ファイルが自動再ダウンロードされ、安全に復元されます。</p>
 
       <h2>免責事項・注意事項</h2>
-      <ul>
-        <li>本MODは有志による非公式パッチです。開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。</li>
-        <li>MODの導入は自己責任にてお願いいたします。</li>
-      </ul>
+      <div style="background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;">
+        <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+          <li><strong>非公式パッチ:</strong> 本MODは一個人ファンによる有志の非公式日本語化パッチです。開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。公式サポートへのお問い合わせは固くお控えください。</li>
+          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合、セーブデータの破損、トラブル等に関しましても、制作者は一切の責任を負いかねます。大切なデータがある場合は事前のバックアップを推奨します。</li>
+          <li><strong>フォントライセンス:</strong> ゲーム内に組み込まれている日本語フォント「BIZ UDPゴシック」は、株式会社モリサワが提供するオープンソースフォント（SIL Open Font License 1.1）に基づき、正規に同梱・利用されています。</li>
+          <li><strong>著作権について:</strong> ゲーム本編のキャラクター、テキスト原案、画像、プログラム等の著作権はすべて原著作者に帰属します。本MODファイルの商用販売や無断再配布は禁止いたします。</li>
+        </ul>
+      </div>
     `
   },
   {
