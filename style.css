@@ -175,6 +175,19 @@ img {
   color: var(--text-muted);
 }
 
+.ad-text-highlight {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  line-height: 1.5;
+}
+
+.ad-text-highlight:hover {
+  color: #1e40af;
+}
+
 /* メインレイアウト（2カラム） */
 .main-layout {
   display: grid;
