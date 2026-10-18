@@ -59,7 +59,9 @@ if (firstPost) {
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-format">.*?<\/span>/, `<span class="dl-val" id="dl-format">${firstPost.download.format}</span>`);
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-size">.*?<\/span>/, `<span class="dl-val" id="dl-size">${firstPost.download.size}</span>`);
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-game-version">.*?<\/span>/, `<span class="dl-val" id="dl-game-version">${firstPost.download.gameVersion}</span>`);
-  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-link"/, `<a href="${firstPost.download.url}" id="dl-button-link"`);
+  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-main"/, `<a href="${firstPost.download.mainUrl}" id="dl-button-main"`);
+  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-mirror"/, `<a href="${firstPost.download.mirrorUrl}" id="dl-button-mirror"`);
+  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-support"/, `<a href="${firstPost.download.supportUrl}" id="dl-button-support"`);
   fs.writeFileSync('post.html', postHtml, 'utf8');
 }
 

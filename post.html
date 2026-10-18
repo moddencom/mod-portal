@@ -152,16 +152,39 @@
             <span class="dl-val" id="dl-game-version">Steam / Xbox Game Pass 最新版</span>
           </div>
         </div>
-        <div class="download-actions">
-          <a href="https://drive.google.com/drive/folders/xxxxxx" id="dl-button-link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span id="dl-button-text">MODファイルをダウンロード</span>
-          </a>
-          <p class="dl-notice">※外部アップローダー（Google Drive / MEGA 等）へ安全に移動します。</p>
+        <div class="download-actions-hybrid">
+          <!-- メイン高速ダウンロード（GitHub Releases） -->
+          <div class="dl-primary-group">
+            <a href="https://github.com/moddencom/mod-portal/releases" id="dl-button-main" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>高速ダウンロード (GitHub)</span>
+            </a>
+            <!-- ミラーダウンロード（収益化アップローダー枠） -->
+            <a href="#mirror-link" id="dl-button-mirror" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+                <path d="M12 12v9"></path>
+                <path d="m8 17 4 4 4-4"></path>
+              </svg>
+              <span>ミラーダウンロード (予備サーバー)</span>
+            </a>
+          </div>
+          <p class="dl-notice">※メインサーバー（GitHub）が混雑・ダウンロードできない場合はミラーサーバーをご利用ください。</p>
+
+          <!-- クリエイター支援・投げ銭ボックス -->
+          <div class="creator-support-box">
+            <div class="support-text">
+              <strong>☕ 制作者を応援・サポートする</strong>
+              <p>個人で膨大なテキスト翻訳とフォント解析・検証を行っております。もし本MODでゲームを楽しんでいただけましたら、次の新作日本語化MOD開発の励みになりますのでサポート（投げ銭）をいただけると大変嬉しいです！</p>
+            </div>
+            <a href="#support-link" id="dl-button-support" target="_blank" rel="noopener noreferrer" class="btn btn-support">
+              <span>❤️ 制作者にコーヒーを贈る (支援・投げ銭)</span>
+            </a>
+          </div>
         </div>
       </div>
 

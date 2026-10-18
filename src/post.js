@@ -34,10 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('dl-size').textContent = post.download.size;
   document.getElementById('dl-game-version').textContent = post.download.gameVersion;
   
-  const dlButton = document.getElementById('dl-button-link');
-  if (dlButton) {
-    dlButton.href = post.download.url;
-  }
+  const dlMain = document.getElementById('dl-button-main');
+  if (dlMain) dlMain.href = post.download.mainUrl || post.download.url || '#';
+
+  const dlMirror = document.getElementById('dl-button-mirror');
+  if (dlMirror) dlMirror.href = post.download.mirrorUrl || '#';
+
+  const dlSupport = document.getElementById('dl-button-support');
+  if (dlSupport) dlSupport.href = post.download.supportUrl || '#';
 
   // 目次（TOC）の自動生成
   generateTOC(bodyElement);

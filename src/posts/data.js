@@ -18,7 +18,9 @@ export const posts = [
       format: "PAKファイル (.pak)",
       size: "約 443 MB",
       gameVersion: "Steam / Xbox Game Pass 最新版",
-      url: "https://drive.google.com/drive/folders/xxxxxx" // アップローダーURLをここに設定
+      mainUrl: "https://github.com/moddencom/mod-portal/releases", // GitHub Releasesの高速DLリンク
+      mirrorUrl: "#mirror-link", // 収益化アップローダー（KatFile / WorkUpload等）のリンク
+      supportUrl: "#support-link" // 投げ銭・支援（OFUSE / BOOTH / Buy Me a Coffee等）のリンク
     },
     content: `
       <h2>『High on Life』日本語化MODについて</h2>
