@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本語化MOD一覧・検索 | JP MOD PORTAL</title>
+  <meta name="description" content="当サイトで配布・解説しているPCゲーム日本語化MODの全タイトル一覧と検索ページです。">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span class="logo-text">JP MOD PORTAL</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/" class="nav-link">ホーム</a>
+        <a href="/mods.html" class="nav-link active">日本語化MOD一覧</a>
+        <a href="/about.html" class="nav-link">当サイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- トップ広告枠 -->
+  <div class="container top-ad-container">
+    <div class="ad-banner ad-header-slot">
+      <div class="ad-tag">SPONSORED</div>
+      <div class="ad-content-placeholder">
+        <span class="ad-dummy-title">🎮 Steam・PCゲーム 特選セール情報</span>
+        <p class="ad-dummy-desc">人気タイトルが最大80%OFF！日本語化MOD対応ゲームをお得にゲット</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- パンくずリスト -->
+  <div class="container breadcrumb-container">
+    <nav class="breadcrumbs">
+      <a href="/">ホーム</a> &gt; <span>日本語化MOD一覧</span>
+    </nav>
+  </div>
+
+  <main class="container main-layout">
+    <div class="content-area">
+      <div class="page-header-box">
+        <h1 class="post-title">日本語化MOD 配布タイトル一覧</h1>
+        <p class="post-lead">当サイトで公開・配布しているPCゲーム日本語化パッチの一覧です。タイトル名やジャンルから検索できます。</p>
+        
+        <!-- 検索・フィルターバー -->
+        <div class="search-filter-bar">
+          <input type="text" id="mod-search-input" class="search-input" placeholder="🔍 ゲームタイトルやキーワードで検索（例: High on Life, FPS...）">
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h2 class="section-title">公開中のMOD</h2>
+        <span class="section-count" id="article-count">掲載数: 1件</span>
+      </div>
+
+      <div class="articles-grid" id="articles-list">
+        <!-- JSで自動レンダリング -->
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-widget ad-widget">
+        <div class="ad-tag">広告</div>
+        <div class="ad-content-placeholder sidebar-ad-slot">
+          <span class="ad-dummy-title">おすすめゲーミングPC</span>
+          <p class="ad-dummy-desc">最新UE4/UE5ゲームも最高設定でぬるぬる動く！</p>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">🏷️ 対象プラットフォーム</h3>
+        <div class="tags-cloud">
+          <span class="tag">Steam</span>
+          <span class="tag">Epic Games</span>
+          <span class="tag">Xbox Game Pass</span>
+          <span class="tag">Unreal Engine</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand">JP MOD PORTAL</p>
+        <p class="footer-desc">本サイトで配布されている日本語化Modはすべて有志ファンによる非公式プロジェクトです。各ゲームの権利は各著作権者に帰属します。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">ホーム</a>
+        <a href="/mods.html">日本語化MOD一覧</a>
+        <a href="/about.html">当サイトについて・免責事項</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 JP MOD PORTAL. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

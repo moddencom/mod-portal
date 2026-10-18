@@ -2,7 +2,7 @@ import { posts } from './posts/data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const postId = urlParams.get('id') || posts[0].id; // デフォルトは先頭記事
+  const postId = urlParams.get('id') || posts[0].id;
 
   const post = posts.find(p => p.id === postId) || posts[0];
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     relatedList.innerHTML = posts.map(p => `
       <li>
         <span class="widget-date">${p.date}</span>
-        <a href="./post.html?id=${p.id}">${p.title}</a>
+        <a href="/post.html?id=${p.id}">${p.title}</a>
       </li>
     `).join('');
   }

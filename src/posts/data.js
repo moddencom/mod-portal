@@ -12,7 +12,7 @@ export const posts = [
     game: "High on Life",
     version: "Ver 1.0 (2026.10.18)",
     date: "2026-10-18",
-    featuredImage: "./images/high-on-life-hero.png",
+    featuredImage: "/images/high-on-life-hero.png",
     author: "JP Modding Team",
     download: {
       format: "PAKファイル (.pak)",
@@ -33,7 +33,7 @@ export const posts = [
 
       <h2>日本語化MODのスクリーンショット</h2>
       <p>ゲーム内の会話字幕やメニュー画面、各種UIが以下のように日本語で違和感なく表示されます。</p>
-      <img src="./images/hol-preview-gameplay.png" alt="High on Life 日本語化ゲーム画面" />
+      <img src="/images/hol-preview-gameplay.png" alt="High on Life 日本語化ゲーム画面" />
 
       <h2>MODの導入手順（ステップ解説）</h2>
       <p>導入は非常に簡単です。ダウンロードしたPAKファイルを指定のフォルダに配置するだけで完了します。</p>
