@@ -18,6 +18,8 @@ export const posts = [
       format: "ZIPアーカイブ (.zip)",
       size: "約 646 KB",
       gameVersion: "Steam 最新版対応",
+      assetName: "DeadAge_Brightness_Mod_v1.0.zip",
+      initialDownloads: 0,
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.2.0/DeadAge_Brightness_Mod_v1.0.zip",
       mirrorUrl: "https://workupload.com/file/xtVV9pnxhS9",
       supportUrl: "https://ofuse.me/o?uid=227788"
@@ -156,6 +158,8 @@ export const posts = [
       format: "ZIPアーカイブ (.zip)",
       size: "約 93.3 MB",
       gameVersion: "Steam 最新版対応",
+      assetName: "DeadAge_JP_Mod_v1.0.zip",
+      initialDownloads: 0,
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip",
       mirrorUrl: "https://workupload.com/file/57PgZkSPcV5",
       supportUrl: "https://ofuse.me/o?uid=227788"
@@ -247,6 +251,8 @@ export const posts = [
       format: "PAKファイル (.pak)",
       size: "約 443 MB",
       gameVersion: "Steam / Xbox Game Pass 最新版",
+      assetName: "Oregon-WindowsNoEditor_JP.pak",
+      initialDownloads: 1,
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak", // GitHub Releasesの1クリック直DLリンク
       mirrorUrl: "https://workupload.com/file/NQ2BQR9sRD9", // WorkUpload ミラーリンク
       supportUrl: "https://ofuse.me/o?uid=227788" // OFUSE 投げ銭・支援リンク

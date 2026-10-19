@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不具合・誤訳の報告フォーム | JP MOD PORTAL</title>
+  <meta name="description" content="PCゲーム日本語化MOD・ツールの誤訳・誤字脱字・クラッシュ等の不具合報告フォーム。製作者のDiscordへ直接通知されます。">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span class="logo-text">JP MOD PORTAL</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/" class="nav-link">ホーム</a>
+        <a href="/mods.html" class="nav-link">日本語化MOD一覧</a>
+        <a href="/report.html" class="nav-link active">不具合・誤訳報告</a>
+        <a href="/about.html" class="nav-link">当サイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- トップ ヘッダー下 広告バナー -->
+  <div class="container top-ad-container">
+    <div class="ad-banner ad-header-slot">
+      <div class="ad-tag">PR・スポンサーリンク</div>
+      <div class="ad-content-placeholder">
+        <div class="ad-top-rotating-slot" style="transition: opacity 0.3s ease; min-height: 50px; display: flex; align-items: center; justify-content: center; width: 100%;">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4BEJHC+BET46Q+5FAA+5ZU29" rel="nofollow" target="_blank">
+            <img border="0" width="728" height="90" alt="限定アイテムや特典付きアイテムなど！通販サイト FaNeMa" src="https://www27.a8.net/svt/bgt?aid=261018912690&wid=001&eno=01&mid=s00000025309001007000&mc=1" style="border-radius: 6px; max-width: 100%; height: auto;">
+          </a>
+          <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4BEJHC+BET46Q+5FAA+5ZU29" alt="" style="display:inline;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container main-layout">
+    <!-- メインコンテンツエリア -->
+    <div class="content-area">
+      <!-- ページヘッダー -->
+      <section class="hero-section" style="padding-bottom: 24px; text-align: left;">
+        <div class="hero-badge" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; border-color: rgba(239, 68, 68, 0.2);">Feedback & Bug Report</div>
+        <h1 class="hero-title" style="font-size: 1.8rem; margin-top: 10px;">不具合・誤訳・未翻訳の報告</h1>
+        <p class="hero-subtitle" style="margin: 0; font-size: 0.95rem;">
+          日本語化MODのプレイ中に見つけた「誤訳・不自然な表現」「未翻訳の英語の残り」「ゲームクラッシュ・進行不能」などの報告を受け付けています。<br>
+          送信された内容は<strong>製作者のDiscordへ即座に通知</strong>され、次回アップデートの修正に役立てられます。
+        </p>
+      </section>
+
+      <!-- 報告フォームカード -->
+      <div class="report-card">
+        <!-- 記事から飛んできた時の通知バナー -->
+        <div id="from-article-notice" class="from-article-notice" style="display: none;"></div>
+
+        <!-- 送信完了メッセージ（初期非表示） -->
+        <div id="report-success" class="report-success-box" style="display: none;">
+          <div class="success-icon">🎉</div>
+          <h3>ご報告ありがとうございます！</h3>
+          <p>報告内容が製作者のDiscordサーバーへ正常に送信されました。<br>確認のうえ、次回アップデートにて順次改善・対応いたします。</p>
+          <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="/" class="btn btn-secondary">トップページへ戻る</a>
+            <button type="button" onclick="location.reload()" class="btn btn-primary">続けて別の報告をする</button>
+          </div>
+        </div>
+
+        <!-- 入力フォーム -->
+        <form id="report-form" class="report-form-body">
+          <!-- 対象MOD選択 -->
+          <div class="form-group">
+            <label for="report-mod" class="form-label">
+              <span>対象のMOD / ゲーム</span>
+              <span class="required-badge">必須</span>
+            </label>
+            <select id="report-mod" class="form-input" required>
+              <option value="">読み込み中...</option>
+            </select>
+          </div>
+
+          <!-- 報告種別 -->
+          <div class="form-group">
+            <label class="form-label">
+              <span>報告の種類</span>
+              <span class="required-badge">必須</span>
+            </label>
+            <div class="report-type-grid">
+              <label class="type-radio-label">
+                <input type="radio" name="report_type" value="誤字・誤訳・未翻訳" checked>
+                <span class="type-radio-box">
+                  <span class="type-icon">✏️</span>
+                  <span class="type-name">誤訳・誤字・未翻訳</span>
+                </span>
+              </label>
+
+              <label class="type-radio-label">
+                <input type="radio" name="report_type" value="動作不具合・クラッシュ">
+                <span class="type-radio-box">
+                  <span class="type-icon">⚠️</span>
+                  <span class="type-name">クラッシュ・動作不具合</span>
+                </span>
+              </label>
+
+              <label class="type-radio-label">
+                <input type="radio" name="report_type" value="導入・インストールの相談">
+                <span class="type-radio-box">
+                  <span class="type-icon">❓</span>
+                  <span class="type-name">導入・インストールの質問</span>
+                </span>
+              </label>
+
+              <label class="type-radio-label">
+                <input type="radio" name="report_type" value="ご要望・その他">
+                <span class="type-radio-box">
+                  <span class="type-icon">💡</span>
+                  <span class="type-name">ご要望・その他</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- お名前（任意） -->
+          <div class="form-group">
+            <label for="report-name" class="form-label">
+              <span>お名前 / ニックネーム</span>
+              <span class="optional-badge">任意</span>
+            </label>
+            <input type="text" id="report-name" class="form-input" placeholder="名無しサバイバー（空欄の場合は匿名）">
+          </div>
+
+          <!-- 報告内容（必須） -->
+          <div class="form-group">
+            <label for="report-content" class="form-label">
+              <span>具体的な発生箇所・状況・セリフ</span>
+              <span class="required-badge">必須</span>
+            </label>
+            <textarea id="report-content" class="form-input form-textarea" rows="5" required placeholder="【記入例】
+・酒場にいる仲間の名前が「請求書」になっています（本来は「ビル」？）。
+・○○の選択肢で「保存しる」と語尾の誤字があります。
+・○○のボスを倒した後のイベントシーンでゲームが強制終了します。"></textarea>
+            <p class="form-help">※どの場面・クエスト・敵の名前かなど、できるだけ詳しく書いていただけると迅速に修正できます。</p>
+          </div>
+
+          <!-- スクリーンショット・画像URL（任意） -->
+          <div class="form-group">
+            <label for="report-image" class="form-label">
+              <span>スクショ画像URL (Gyazo, Imgur, X/Twitter等)</span>
+              <span class="optional-badge">任意</span>
+            </label>
+            <input type="url" id="report-image" class="form-input" placeholder="https://gyazo.com/... や https://i.imgur.com/...">
+            <p class="form-help">※画面写真があると不具合の特定が格段に早くなります。画像アップローダーのURLを貼り付けてください。</p>
+          </div>
+
+          <!-- エラーメッセージ表示枠 -->
+          <div id="report-error-msg" class="report-error-box" style="display: none;"></div>
+
+          <!-- 送信ボタン -->
+          <div class="form-actions">
+            <button type="submit" id="report-submit-btn" class="btn btn-primary btn-large" style="width: 100%; justify-content: center; font-size: 1.05rem;">
+              <span>🚀 報告を送信する (Discordへ通知)</span>
+            </button>
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+              ※IPアドレスや個人情報は記録されません。完全匿名で安全に送信されます。
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <!-- 報告にあたってのお願い -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">📌 報告のヒント</h3>
+        <ul style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; padding-left: 18px; margin-bottom: 0;">
+          <li style="margin-bottom: 8px;"><strong>セリフの前後や話者:</strong> 誰のセリフか記載いただけるとファイル内の特定が早くなります。</li>
+          <li style="margin-bottom: 8px;"><strong>ゲームバージョン:</strong> Steam最新版以外の環境（Game Pass等）の場合はその旨もお書き添えください。</li>
+          <li><strong>原則として個別返信は行っていません</strong>が、すべての通知に目を通しアップデートに反映しています！</li>
+        </ul>
+      </div>
+
+      <!-- クリエイター応援ウィジェット（OFUSE） -->
+      <div class="sidebar-widget support-sidebar-widget">
+        <h3 class="widget-title">☕ 制作者を応援する</h3>
+        <p style="font-size: 0.85rem; color: #78350f; margin-bottom: 14px; line-height: 1.6;">
+          日本語化MODの制作・アップデート活動をOFUSE（100円〜のファンレター）で応援していただけると開発の励みになります！
+        </p>
+        <a href="https://ofuse.me/o?uid=227788" target="_blank" rel="noopener noreferrer" class="btn btn-support" style="width: 100%; font-size: 0.9rem; padding: 10px 16px;">
+          ❤️ OFUSEで応援を送る
+        </a>
+      </div>
+
+      <!-- 自動ローテーション広告 -->
+      <div class="sidebar-widget sticky-widget ad-widget">
+        <div class="ad-tag">PR・おすすめゲーミングアイテム</div>
+        <div class="ad-content-placeholder sidebar-ad-slot">
+          <div class="ad-rotating-slot" style="transition: opacity 0.3s ease; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://px.a8.net/svt/ejp?a8mat=4BEJHC+B2WG36+5U2I+5ZEMP" rel="nofollow" target="_blank">
+              <img border="0" width="300" height="250" alt="WEBROOT アンチウイルス for Gamer" src="https://www29.a8.net/svt/bgt?aid=261018912670&wid=001&eno=01&mid=s00000027225001005000&mc=1" style="border-radius: 6px;">
+            </a>
+            <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4BEJHC+B2WG36+5U2I+5ZEMP" alt="" style="display:inline;">
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand">JP MOD PORTAL</p>
+        <p class="footer-desc">本サイトで配布されている日本語化Modはすべて有志ファンによる非公式プロジェクトです。各ゲームの権利は各著作権者に帰属します。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">ホーム</a>
+        <a href="/mods.html">日本語化MOD一覧</a>
+        <a href="/report.html">不具合・誤訳報告</a>
+        <a href="/about.html">当サイトについて・免責事項</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 JP MOD PORTAL. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/report.js"></script>
+</body>
+</html>

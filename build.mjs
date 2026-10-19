@@ -17,6 +17,8 @@ function createCardsHTML(items) {
                 <time datetime="${post.date}">${post.date}</time>
                 <span>•</span>
                 <span>${post.version}</span>
+                <span>•</span>
+                <span class="dl-count-badge" data-asset="${post.download.assetName || ''}">📥 <span class="card-dl-num">${(post.download.initialDownloads || 0).toLocaleString()}</span> DL</span>
               </div>
               <h3 class="card-title">
                 <a href="/post.html?id=${post.id}">${post.title}</a>
@@ -58,9 +60,11 @@ if (firstPost) {
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-format">.*?<\/span>/, `<span class="dl-val" id="dl-format">${firstPost.download.format}</span>`);
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-size">.*?<\/span>/, `<span class="dl-val" id="dl-size">${firstPost.download.size}</span>`);
   postHtml = postHtml.replace(/<span class="dl-val" id="dl-game-version">.*?<\/span>/, `<span class="dl-val" id="dl-game-version">${firstPost.download.gameVersion}</span>`);
+  postHtml = postHtml.replace(/<span id="dl-count-num">.*?<\/span>/, `<span id="dl-count-num">${(firstPost.download.initialDownloads || 0).toLocaleString()}</span>`);
   postHtml = postHtml.replace(/<a href=".*?" id="dl-button-main"/, `<a href="${firstPost.download.mainUrl}" id="dl-button-main"`);
   postHtml = postHtml.replace(/<a href=".*?" id="dl-button-mirror"/, `<a href="${firstPost.download.mirrorUrl}" id="dl-button-mirror"`);
   postHtml = postHtml.replace(/<a href=".*?" id="dl-button-support"/, `<a href="${firstPost.download.supportUrl}" id="dl-button-support"`);
+  postHtml = postHtml.replace(/<a href=".*?" id="dl-report-link"/, `<a href="/report.html?id=${firstPost.id}" id="dl-report-link"`);
   fs.writeFileSync('post.html', postHtml, 'utf8');
 }
 

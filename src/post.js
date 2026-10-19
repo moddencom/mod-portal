@@ -1,7 +1,8 @@
 import { posts } from './posts/data.js';
 import { initAdRotator } from './ads.js';
+import { getDownloadCounts } from './stats.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const postId = urlParams.get('id') || posts[0].id;
 
@@ -44,6 +45,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const dlSupport = document.getElementById('dl-button-support');
   if (dlSupport) dlSupport.href = post.download.supportUrl || '#';
 
+  // 記事内 不具合・誤訳報告ボタンのリンク（対象MODのIDを自動付与）
+  const dlReport = document.getElementById('dl-report-link');
+  if (dlReport) {
+    dlReport.href = `/report.html?id=${post.id}`;
+  }
+
+  // ダウンロード数の初期表示 & リアルタイム取得
+  const dlCountNum = document.getElementById('dl-count-num');
+  if (dlCountNum) {
+    dlCountNum.textContent = (post.download.initialDownloads || 0).toLocaleString();
+    getDownloadCounts().then(counts => {
+      if (post.download.assetName && counts[post.download.assetName] !== undefined) {
+        dlCountNum.textContent = counts[post.download.assetName].toLocaleString();
+      }
+    });
+  }
+
+  // 「使うね！（お借りします）」感謝・広告応援ボタン
+  const thanksBtn = document.getElementById('btn-use-mod');
+  if (thanksBtn) {
+    thanksBtn.addEventListener('click', () => {
+      // 感謝を伝えるための広告リンク一覧からランダムオープン
+      const thanksAds = [
+        'https://px.a8.net/svt/ejp?a8mat=4BEJHC+B2WG36+5U2I+5YRHE', // WEBROOT アンチウイルス
+        'https://px.a8.net/svt/ejp?a8mat=4BEJHC+AS6N76+5W1M+5YJRM', // ふるいち 宅配買取
+        'https://px.a8.net/svt/ejp?a8mat=4BEJHC+BET46Q+5FAA+5ZU29'  // FaNeMa キャラグッズ
+      ];
+      const targetAd = thanksAds[Math.floor(Math.random() * thanksAds.length)];
+      window.open(targetAd, '_blank', 'noopener,noreferrer');
+
+      showThanksToast('💖 「使うね！」ありがとうございます！製作者の大きな励みになります！');
+    });
+  }
+
   // 目次（TOC）の自動生成
   generateTOC(bodyElement);
 
@@ -84,4 +119,24 @@ function generateTOC(contentElement) {
     li.appendChild(a);
     tocList.appendChild(li);
   });
+}
+
+function showThanksToast(msg) {
+  const existing = document.querySelector('.thanks-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'thanks-toast';
+  toast.innerHTML = `
+    <span style="font-size: 1.3rem;">🙏</span>
+    <span>${msg}</span>
+  `;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(20px)';
+    setTimeout(() => toast.remove(), 400);
+  }, 4000);
 }

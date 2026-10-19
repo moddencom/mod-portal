@@ -1,5 +1,6 @@
 import { posts } from './posts/data.js';
 import { initAdRotator } from './ads.js';
+import { getDownloadCounts } from './stats.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const listContainer = document.getElementById('articles-list');
@@ -28,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <time datetime="${post.date}">${post.date}</time>
               <span>•</span>
               <span>${post.version}</span>
+              <span>•</span>
+              <span class="dl-count-badge" data-asset="${post.download.assetName || ''}">📥 <span class="card-dl-num">${(post.download.initialDownloads || 0).toLocaleString()}</span> DL</span>
             </div>
             <h3 class="card-title">
               <a href="/post.html?id=${post.id}">${post.title}</a>
@@ -42,7 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </article>
       `).join('');
+
+      // リアルタイムDL数の反映
+      updateDownloadCounts();
     }
+  }
+
+  function updateDownloadCounts() {
+    getDownloadCounts().then(counts => {
+      document.querySelectorAll('.dl-count-badge').forEach(badge => {
+        const asset = badge.getAttribute('data-asset');
+        if (asset && counts[asset] !== undefined) {
+          const numSpan = badge.querySelector('.card-dl-num');
+          if (numSpan) numSpan.textContent = counts[asset].toLocaleString();
+        }
+      });
+    });
   }
 
   // 初回表示
@@ -58,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const filtered = posts.filter(p =>
         p.title.toLowerCase().includes(keyword) ||
+        p.summary.toLowerCase().includes(keyword) ||
         p.game.toLowerCase().includes(keyword) ||
-        p.category.toLowerCase().includes(keyword) ||
-        p.summary.toLowerCase().includes(keyword)
+        p.category.toLowerCase().includes(keyword)
       );
       renderPosts(filtered);
     });
