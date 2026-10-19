@@ -157,7 +157,7 @@ export const posts = [
       size: "約 93.3 MB",
       gameVersion: "Steam 最新版対応",
       mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip",
-      mirrorUrl: "https://workupload.com/file/AM7m9FbRfRR",
+      mirrorUrl: "https://workupload.com/file/57PgZkSPcV5",
       supportUrl: "https://ofuse.me/o?uid=227788"
     },
     content: `
