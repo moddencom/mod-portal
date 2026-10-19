@@ -1046,6 +1046,94 @@ img {
   margin-bottom: 16px;
 }
 
+/* 画像ファイル ドロップゾーン & プレビュー */
+.image-upload-dropzone {
+  border: 2px dashed var(--border-color);
+  background: var(--bg-main);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.image-upload-dropzone:hover,
+.image-upload-dropzone.drag-over {
+  border-color: var(--primary);
+  background: #eff6ff;
+}
+
+.dropzone-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.dropzone-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.dropzone-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.image-preview-container {
+  margin-top: 12px;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.image-preview-img {
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+
+.btn-remove-image {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.15s ease;
+}
+
+.btn-remove-image:hover {
+  background: #dc2626;
+}
+
+.image-alt-toggle {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.image-alt-toggle:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+
 /* ========================================================
    「使うね（お借りします）」ボタン & 感謝トースト
 ======================================================== */

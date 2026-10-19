@@ -2,6 +2,7 @@ import { posts } from './posts/data.js';
 import { initAdRotator } from './ads.js';
 
 const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1561708315057197066/NZB16CB9d4muf7HrjD_XSMXt_Dhz9-zpJjIk0QFh80mV6oWq_ovhjBoM-K1KK-oGqf-x';
+const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB (Discord Webhook上限)
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('report-form');
@@ -10,6 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const successBox = document.getElementById('report-success');
   const submitBtn = document.getElementById('report-submit-btn');
   const errorMsg = document.getElementById('report-error-msg');
+
+  // 画像アップロード用エレメント
+  const fileInput = document.getElementById('report-file-input');
+  const dropzone = document.getElementById('dropzone');
+  const previewWrapper = document.getElementById('preview-wrapper');
+  const previewImg = document.getElementById('image-preview');
+  const removeBtn = document.getElementById('btn-remove-preview');
+  const toggleUrlBtn = document.getElementById('toggle-url-input');
+  const urlInputContainer = document.getElementById('url-input-container');
+
+  let attachedFile = null;
 
   // URLパラメータからMod IDやゲーム名を取得
   const urlParams = new URLSearchParams(window.location.search);
@@ -43,7 +55,115 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // フォーム送信イベント
+  // --- 画像ファイル処理関数 ---
+  function handleImageFile(file) {
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      alert('画像ファイル（PNG, JPG, GIF, WebP）を選択してください。');
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      alert(`ファイルサイズが大きすぎます（${(file.size / 1024 / 1024).toFixed(1)}MB）。8MB以下の画像を選択してください。`);
+      return;
+    }
+
+    attachedFile = file;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      if (previewImg && previewWrapper) {
+        previewImg.src = e.target.result;
+        previewWrapper.style.display = 'inline-block';
+        if (dropzone) {
+          dropzone.style.display = 'none';
+        }
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function clearImageFile() {
+    attachedFile = null;
+    if (fileInput) fileInput.value = '';
+    if (previewImg) previewImg.src = '';
+    if (previewWrapper) previewWrapper.style.display = 'none';
+    if (dropzone) dropzone.style.display = 'block';
+  }
+
+  // ドロップゾーンクリックでファイルダイアログ
+  if (dropzone && fileInput) {
+    dropzone.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        handleImageFile(e.target.files[0]);
+      }
+    });
+
+    // ドラッグ＆ドロップイベント
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('drag-over');
+      });
+    });
+
+    ['dragleave', 'dragend', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('drag-over');
+      });
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleImageFile(e.dataTransfer.files[0]);
+      }
+    });
+  }
+
+  // クリップボードからの直接貼り付け（Ctrl + V）
+  window.addEventListener('paste', (e) => {
+    // フォームにフォーカスがある時や画面全体で画像ペーストを検知
+    const items = e.clipboardData?.items;
+    if (!items) return;
+
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].type.startsWith('image/')) {
+        const file = items[i].getAsFile();
+        if (file) {
+          handleImageFile(file);
+          break;
+        }
+      }
+    }
+  });
+
+  // プレビュー削除ボタン
+  if (removeBtn) {
+    removeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      clearImageFile();
+    });
+  }
+
+  // 画像URL切り替えアコーディオン
+  if (toggleUrlBtn && urlInputContainer) {
+    toggleUrlBtn.addEventListener('click', () => {
+      const isHidden = urlInputContainer.style.display === 'none';
+      urlInputContainer.style.display = isHidden ? 'block' : 'none';
+      toggleUrlBtn.textContent = isHidden ? '▲ 画像URL入力を閉じる' : '🔗 画像URLで指定する場合はこちら';
+    });
+  }
+
+  // --- フォーム送信イベント ---
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -61,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const reportType = document.querySelector('input[name="report_type"]:checked')?.value || '誤字・誤訳・未翻訳';
       const nickname = document.getElementById('report-name').value.trim() || '名無しサバイバー';
       const content = document.getElementById('report-content').value.trim();
-      const imageUrl = document.getElementById('report-image').value.trim();
+      const imageUrlInput = document.getElementById('report-image')?.value.trim() || '';
 
       if (!content) {
         alert('報告内容を入力してください。');
@@ -114,16 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       };
 
-      // 画像URLが有効そうならEmbed画像に追加
-      if (imageUrl && /^https?:\/\/.+/i.test(imageUrl)) {
-        payload.embeds[0].image = { url: imageUrl };
-        payload.embeds[0].fields.push({
-          name: "スクリーンショット / 添付画像",
-          value: imageUrl,
-          inline: false
-        });
-      }
-
       // 送信元リファラ
       if (document.referrer) {
         payload.embeds[0].fields.push({
@@ -134,13 +244,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const response = await fetch(DISCORD_WEBHOOK_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+        let response;
+
+        if (attachedFile) {
+          // 画像ファイルが添付されている場合：multipart/form-data で直接添付
+          const fileName = attachedFile.name || 'screenshot.png';
+          payload.embeds[0].image = { url: `attachment://${fileName}` };
+          payload.embeds[0].fields.push({
+            name: "添付画像",
+            value: `📎 ${fileName} (${(attachedFile.size / 1024).toFixed(1)} KB)`,
+            inline: false
+          });
+
+          const formData = new FormData();
+          formData.append('payload_json', JSON.stringify(payload));
+          formData.append('files[0]', attachedFile, fileName);
+
+          response = await fetch(DISCORD_WEBHOOK_URL, {
+            method: 'POST',
+            body: formData
+          });
+        } else {
+          // 画像URLのみ、または画像なしの場合
+          if (imageUrlInput && /^https?:\/\/.+/i.test(imageUrlInput)) {
+            payload.embeds[0].image = { url: imageUrlInput };
+            payload.embeds[0].fields.push({
+              name: "画像URL",
+              value: imageUrlInput,
+              inline: false
+            });
+          }
+
+          response = await fetch(DISCORD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+        }
 
         if (!response.ok) {
           throw new Error(`Discord APIエラー: ${response.status}`);

@@ -148,14 +148,37 @@
             <p class="form-help">※どの場面・クエスト・敵の名前かなど、できるだけ詳しく書いていただけると迅速に修正できます。</p>
           </div>
 
-          <!-- スクリーンショット・画像URL（任意） -->
+          <!-- スクリーンショット・画像の直接添付（任意） -->
           <div class="form-group">
-            <label for="report-image" class="form-label">
-              <span>スクショ画像URL (Gyazo, Imgur, X/Twitter等)</span>
+            <label class="form-label">
+              <span>スクリーンショット / 画像の添付</span>
               <span class="optional-badge">任意</span>
             </label>
-            <input type="url" id="report-image" class="form-input" placeholder="https://gyazo.com/... や https://i.imgur.com/...">
-            <p class="form-help">※画面写真があると不具合の特定が格段に早くなります。画像アップローダーのURLを貼り付けてください。</p>
+
+            <!-- 非表示のファイル入力 -->
+            <input type="file" id="report-file-input" accept="image/png, image/jpeg, image/gif, image/webp" style="display: none;">
+
+            <!-- ドロップゾーン -->
+            <div id="dropzone" class="image-upload-dropzone">
+              <span class="dropzone-icon">📷</span>
+              <div class="dropzone-title">クリックして画像を選択、またはドラッグ＆ドロップ</div>
+              <div class="dropzone-sub">※画面キャプチャを撮って [Ctrl + V] で直接貼り付けも可能です（最大8MB）</div>
+            </div>
+
+            <!-- プレビュー表示エリア -->
+            <div id="preview-wrapper" class="image-preview-container" style="display: none;">
+              <img id="image-preview" class="image-preview-img" src="" alt="添付画像プレビュー">
+              <button type="button" id="btn-remove-preview" class="btn-remove-image">✕ 削除する</button>
+            </div>
+
+            <!-- URL入力への切り替え -->
+            <div>
+              <span id="toggle-url-input" class="image-alt-toggle">🔗 画像URLで指定する場合はこちら</span>
+              <div id="url-input-container" style="display: none; margin-top: 8px;">
+                <input type="url" id="report-image" class="form-input" placeholder="https://gyazo.com/... や https://i.imgur.com/...">
+                <p class="form-help">※GyazoやImgur等の画像URLも直接Discordへプレビュー表示されます。</p>
+              </div>
+            </div>
           </div>
 
           <!-- エラーメッセージ表示枠 -->
