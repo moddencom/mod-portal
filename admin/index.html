@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JP MOD PORTAL 管理スタジオ</title>
+  <link rel="stylesheet" href="/admin/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/></svg>">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- サイドバーナビゲーション -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span class="brand-name">MOD PORTAL<br><small>Admin Studio</small></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button type="button" class="nav-item active" data-view="dashboard-view">
+          <span class="nav-icon">📋</span>
+          <span>記事一覧</span>
+        </button>
+        <button type="button" class="nav-item" data-view="editor-view" id="nav-btn-new-post">
+          <span class="nav-icon">➕</span>
+          <span>新規記事作成</span>
+        </button>
+        <button type="button" class="nav-item" data-view="analytics-view">
+          <span class="nav-icon">📊</span>
+          <span>アクセス解析・足跡</span>
+        </button>
+        <a href="/" target="_blank" class="nav-item">
+          <span class="nav-icon">🌐</span>
+          <span>本番サイト確認 ↗</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="git-status-card" id="git-status-box">
+          <div class="git-status-indicator">
+            <span class="status-dot" id="git-status-dot"></span>
+            <span class="status-text" id="git-status-text">状態確認中...</span>
+          </div>
+          <button type="button" class="btn btn-publish" id="btn-quick-publish">
+            <span>🚀 本番サイトへ公開</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="admin-main">
+      <!-- トップバー -->
+      <header class="admin-header">
+        <div class="header-title">
+          <h1 id="page-title">記事管理ダッシュボード</h1>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="btn btn-secondary" id="btn-refresh-data">
+            <span>🔄 データ再読み込み</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-header-new-post">
+            <span>➕ 新規記事を作成</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- 画面1: ダッシュボード / 記事一覧 -->
+      <section id="dashboard-view" class="view-panel active">
+        <!-- KPIサマリー -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">掲載MOD記事数</div>
+            <div class="kpi-value" id="kpi-post-count">-</div>
+            <div class="kpi-sub">全記事が最新版で配信中</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">総ダウンロード数</div>
+            <div class="kpi-value" id="kpi-total-dl">-</div>
+            <div class="kpi-sub">GitHub Releases 累計</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">最終公開コミット</div>
+            <div class="kpi-value" style="font-size: 1.1rem; font-weight: 600;" id="kpi-last-commit">-</div>
+            <div class="kpi-sub" id="kpi-git-note">最新コミット情報</div>
+          </div>
+        </div>
+
+        <!-- 記事一覧テーブル -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h2 class="panel-card-title">登録済み記事一覧</h2>
+            <div class="search-box">
+              <input type="text" id="post-search" placeholder="タイトルやゲーム名で検索..." class="admin-input">
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 80px;">画像</th>
+                  <th>記事タイトル / ゲーム名</th>
+                  <th style="width: 140px;">カテゴリ</th>
+                  <th style="width: 100px;">バージョン</th>
+                  <th style="width: 100px;">累計DL</th>
+                  <th style="width: 110px;">公開日</th>
+                  <th style="width: 150px; text-align: center;">操作</th>
+                </tr>
+              </thead>
+              <tbody id="posts-table-body">
+                <tr><td colspan="7" style="text-align: center; padding: 30px;">記事を読み込んでいます...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 画面2: 記事作成・編集エディタ -->
+      <section id="editor-view" class="view-panel">
+        <form id="post-editor-form">
+          <!-- エディタヘッダー -->
+          <div class="editor-action-bar">
+            <div class="editor-status">
+              <span id="editor-mode-badge" class="badge badge-new">新規作成</span>
+              <span id="editor-title-preview" class="editor-subtitle">無題の記事</span>
+            </div>
+            <div class="editor-buttons">
+              <button type="button" class="btn btn-ai" id="btn-open-ai-modal">
+                <span>🤖 AIで下書きを自動生成</span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="btn-toggle-preview">
+                <span>👁️ リアルタイムプレビュー</span>
+              </button>
+              <button type="submit" class="btn btn-primary" id="btn-save-post">
+                <span>💾 記事を保存する</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="editor-layout">
+            <!-- 左ペイン: フォーム入力 -->
+            <div class="editor-left-pane">
+              <!-- 基本情報 -->
+              <div class="form-card">
+                <h3 class="form-card-title">📌 基本情報</h3>
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-label">対象ゲーム名 <span class="req">*</span></label>
+                    <input type="text" id="form-game" required class="admin-input" placeholder="例: Dead Age">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">記事ID (URLスラッグ) <span class="req">*</span></label>
+                    <input type="text" id="form-id" required class="admin-input" placeholder="例: dead-age-remastered" pattern="[a-zA-Z0-9_\-]+">
+                    <small class="admin-hint">※URLに使われます（半角英数字とハイフン）</small>
+                  </div>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label">記事タイトル <span class="req">*</span></label>
+                  <input type="text" id="form-title" required class="admin-input" placeholder="例: 【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）">
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label">概要（リード文 / SEO説明文） <span class="req">*</span></label>
+                  <textarea id="form-summary" rows="3" required class="admin-input admin-textarea" placeholder="記事の概要を150文字程度で入力"></textarea>
+                </div>
+
+                <div class="form-grid-3">
+                  <div class="admin-form-group">
+                    <label class="admin-label">カテゴリ</label>
+                    <input type="text" id="form-category" class="admin-input" placeholder="例: RPG / サバイバル" list="category-suggestions">
+                    <datalist id="category-suggestions">
+                      <option value="RPG / サバイバル">
+                      <option value="ユーティリティ / 改善">
+                      <option value="FPS / コメディ">
+                      <option value="アドベンチャー">
+                      <option value="アクション">
+                    </datalist>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">MODバージョン</label>
+                    <input type="text" id="form-version" class="admin-input" placeholder="例: Ver 1.0 (2026.10.20)">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">公開日</label>
+                    <input type="date" id="form-date" class="admin-input">
+                  </div>
+                </div>
+              </div>
+
+              <!-- ダウンロード設定 -->
+              <div class="form-card">
+                <h3 class="form-card-title">📦 ダウンロード設定</h3>
+                <div class="form-grid-3">
+                  <div class="admin-form-group">
+                    <label class="admin-label">ファイル形式</label>
+                    <input type="text" id="form-dl-format" class="admin-input" placeholder="例: ZIPアーカイブ (.zip)">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">ファイル容量</label>
+                    <input type="text" id="form-dl-size" class="admin-input" placeholder="例: 約 93.3 MB">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">対応ゲームバージョン</label>
+                    <input type="text" id="form-dl-game-version" class="admin-input" placeholder="例: Steam 最新版対応">
+                  </div>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label">メイン高速ダウンロードURL (GitHub Releases等)</label>
+                  <input type="url" id="form-dl-main-url" class="admin-input" placeholder="https://github.com/moddencom/mod-portal/releases/download/...">
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-label">ミラーダウンロードURL (WorkUpload等)</label>
+                    <input type="url" id="form-dl-mirror-url" class="admin-input" placeholder="https://workupload.com/file/...">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-label">GitHub Releases アセットファイル名 (DL数計測用)</label>
+                    <input type="text" id="form-dl-asset-name" class="admin-input" placeholder="例: DeadAge_JP_Mod_v1.0.zip">
+                  </div>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-label">クリエイター支援URL (OFUSE等)</label>
+                  <input type="url" id="form-dl-support-url" class="admin-input" value="https://ofuse.me/o?uid=227788">
+                </div>
+              </div>
+
+              <!-- 画像アップロード -->
+              <div class="form-card">
+                <h3 class="form-card-title">🖼️ 画像アップロード</h3>
+                
+                <div class="admin-form-group">
+                  <label class="admin-label">アイキャッチ画像URL</label>
+                  <div style="display: flex; gap: 10px;">
+                    <input type="text" id="form-featured-image" class="admin-input" placeholder="/images/dead-age-hero.png">
+                    <label class="btn btn-secondary" style="cursor: pointer; white-space: nowrap;">
+                      ファイル選択
+                      <input type="file" id="input-featured-file" accept="image/*" style="display: none;">
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 本文用画像ドラッグ＆ドロップゾーン -->
+                <div class="admin-dropzone" id="article-dropzone">
+                  <span class="drop-icon">📷</span>
+                  <div class="drop-text">本文用スクリーンショットをここにドラッグ＆ドロップ</div>
+                  <div class="drop-sub">またはクリックしてファイル選択（自動で images/ に保存され、挿入用HTMLを生成します）</div>
+                  <input type="file" id="input-article-file" accept="image/*" style="display: none;">
+                </div>
+
+                <!-- アップロード済み画像タグリスト -->
+                <div id="uploaded-images-list" class="uploaded-images-container" style="display: none;">
+                  <div class="uploaded-title">📎 アップロード済み画像（クリックで本文へ挿入タグをコピー）：</div>
+                  <div class="uploaded-tags" id="uploaded-tags-box"></div>
+                </div>
+              </div>
+
+              <!-- 記事本文 -->
+              <div class="form-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <h3 class="form-card-title" style="margin: 0;">📝 記事本文 (HTML / Markdown)</h3>
+                  <div class="editor-quick-tools">
+                    <button type="button" class="btn-tool" onclick="insertTag('<h2>', '</h2>')">見出し2</button>
+                    <button type="button" class="btn-tool" onclick="insertTag('<strong>', '</strong>')">太字</button>
+                    <button type="button" class="btn-tool" onclick="insertTag('<blockquote>\n  <strong>💡 本MODの特徴:</strong><br>\n  ・', '\n</blockquote>')">引用枠</button>
+                    <button type="button" class="btn-tool" onclick="insertTag('<ol>\n  <li>', '</li>\n</ol>')">手順リスト</button>
+                  </div>
+                </div>
+                <textarea id="form-content" rows="18" required class="admin-input admin-textarea code-editor" placeholder="<h2>『タイトル』について</h2><p>本文を記述...</p>"></textarea>
+              </div>
+            </div>
+
+            <!-- 右ペイン: リアルタイムプレビュー -->
+            <div class="editor-right-pane" id="preview-pane">
+              <div class="preview-card">
+                <div class="preview-header">
+                  <span>📱 リアルタイムプレビュー</span>
+                </div>
+                <div class="preview-body" id="live-preview-content">
+                  <p style="color: #64748b;">左側のフォームに入力すると、ここに本番と同じ見た目でプレビューされます。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- 画面3: アクセス解析・足跡 -->
+      <section id="analytics-view" class="view-panel">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h2 class="panel-card-title">📊 アクセス解析・足跡（Cloudflare Web Analytics）</h2>
+          </div>
+          <div style="padding: 24px;">
+            <div class="analytics-info-banner">
+              <div style="font-size: 2rem;">🚀</div>
+              <div>
+                <h3 style="margin-bottom: 6px; font-size: 1.15rem;">完全無料・Cookie不要のプライバシー解析</h3>
+                <p style="color: #475569; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+                  当サイトはCloudflare Pagesで高速配信されています。Cloudflare Web Analyticsを活用することで、
+                  <strong>リアルタイム訪問者数、ページ別PV、国別アクセス、流入元サイト（Google検索、X/Twitter等）</strong>を完全無料で閲覧できます。
+                </p>
+              </div>
+            </div>
+
+            <div style="margin: 32px 0;">
+              <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: #1e293b;">🌐 Cloudflare ダッシュボードへのアクセス</h3>
+              <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 16px;">
+                以下のボタンからCloudflare管理画面にログインすると、直近の足跡・グラフがリアルタイムで確認できます。
+              </p>
+              <a href="https://dash.cloudflare.com/" target="_blank" class="btn btn-primary btn-large">
+                <span>Cloudflare Web Analytics を開く ↗</span>
+              </a>
+            </div>
+
+            <div class="analytics-setup-box">
+              <h4 style="margin-bottom: 10px; font-size: 0.98rem;">💡 解析タグ（ビーコン）の有効化手順：</h4>
+              <ol style="font-size: 0.88rem; color: #475569; line-height: 1.8; padding-left: 20px;">
+                <li>Cloudflare ダッシュボードにログインし、「Web Analytics」を開きます。</li>
+                <li>「Webサイトを追加」でサイトURL（<code>mod-portal.pages.dev</code> など）を入力します。</li>
+                <li>発行された計測トークン（Token）をコピーします。</li>
+                <li>サイトの各HTMLファイル末尾に自動でタグが挿入されるため、特別なサーバー管理なしですぐに計測が始まります。</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- モーダル: AI記事生成アシスタント -->
+  <div class="admin-modal" id="ai-modal">
+    <div class="admin-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">🤖 AI記事下書き生成アシスタント</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-ai-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 16px;">
+          ゲーム名と簡単な特徴（箇条書き）を入力するだけで、洋画風のキャッチコピー、特徴リスト、導入手順を自動生成します。
+          ※ローカルのRX 6600（Ollama等のローカルLLM）が起動していれば高速に自動処理されます。
+        </p>
+
+        <div class="admin-form-group">
+          <label class="admin-label">ゲーム名 <span class="req">*</span></label>
+          <input type="text" id="ai-game-name" class="admin-input" placeholder="例: Dead Age">
+        </div>
+
+        <div class="admin-form-group">
+          <label class="admin-label">MODの主な特徴・変更点（箇条書き・メモでOK）</label>
+          <textarea id="ai-features" rows="4" class="admin-input admin-textarea" placeholder="例:
+・ストーリーとセリフを完全日本語化
+・BIZ UDPゴシックフォントに置換して文字化けを解消
+・ドラッグ＆ドロップで導入可能"></textarea>
+        </div>
+
+        <div class="admin-form-group">
+          <label class="admin-label">追加の要望（任意）</label>
+          <input type="text" id="ai-extra" class="admin-input" placeholder="例: 洋画吹き替え風の少し熱い口調にして、など">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btn-cancel-ai">キャンセル</button>
+        <button type="button" class="btn btn-ai" id="btn-submit-ai">
+          <span>✨ AIで下書きを自動生成して入力欄へ適用</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- モーダル: 本番公開プログレス -->
+  <div class="admin-modal" id="publish-modal">
+    <div class="admin-modal-card" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title">🚀 本番サイトへ公開中</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-publish-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="publish-loading">
+          <div class="spinner-large"></div>
+          <p style="text-align: center; margin-top: 16px; font-weight: 600; color: #1e293b;">
+            静的HTMLをビルドし、GitHubへコミット＆プッシュしています...
+          </p>
+        </div>
+        <div id="publish-result" style="display: none;">
+          <div id="publish-status-icon" style="font-size: 3rem; text-align: center; margin-bottom: 12px;"></div>
+          <h4 id="publish-status-title" style="text-align: center; font-size: 1.2rem; margin-bottom: 12px;"></h4>
+          <pre id="publish-log" class="publish-log-box"></pre>
+        </div>
+      </div>
+      <div class="modal-footer" id="publish-modal-footer" style="display: none;">
+        <button type="button" class="btn btn-primary" id="btn-done-publish">完了</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/admin/app.js"></script>
+</body>
+</html>

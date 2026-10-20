@@ -1,0 +1,10 @@
+{
+  "name": "jp-mod-portal",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PC Game Japanese Mod Portal and Admin Studio",
+  "scripts": {
+    "build": "node build.mjs",
+    "admin": "node admin/server.mjs"
+  }
+}
