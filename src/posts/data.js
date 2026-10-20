@@ -5,6 +5,67 @@
  */
 export const posts = [
   {
+    id: "pony-island-japanese",
+    title: "【Pony Island】完全日本語化MOD 配布・導入手順ガイド（Steam版対応・全編美麗ビットマップフォント表示）",
+    summary: "悪魔のアーケードゲームに挑むメタフィクションサスペンス傑作『Pony Island』の完全日本語化MODです。未公開のまま眠っていた公式日本語データ約9割を完全補完し、プログラム修正により内包ビットマップフォント描画を有効化。悪魔ルシファーの皮肉、壊れたレトロOS、パズル、ストーリー全編を美麗なドット絵日本語で楽しめます。",
+    category: "日本語化",
+    game: "Pony Island",
+    version: "Ver 1.0 (2026.10.20)",
+    date: "2026-10-20",
+    featuredImage: "/images/pony-island-hero.jpg",
+    author: "JP Modding Team",
+    download: {
+      format: "ZIPアーカイブ (.zip)",
+      size: "約 394 KB",
+      gameVersion: "Steam 最新版対応",
+      assetName: "Pony_Island_Japanese_MOD_v1.0.zip",
+      initialDownloads: 0,
+      mainUrl: "/downloads/Pony_Island_Japanese_MOD_v1.0.zip",
+      mirrorUrl: "",
+      supportUrl: "https://ofuse.me/o?uid=227788"
+    },
+    content: `
+      <h2>『Pony Island』完全日本語化MODについて</h2>
+      <p>『Inscryption』の作者 Daniel Mullins 氏の原点にして、Steamで圧倒的好評を誇るメタフィクション・パズルサスペンス<strong>『Pony Island』</strong>。</p>
+      <p>実は本作のゲームデータ内には、<strong>開発時に作成された非常に高クオリティな公式日本語訳（全体の約9割）が未公開のまま眠っていました</strong>。しかし、フォント差し替えプログラムの不具合と言語切り替えボタンの未配置により、公式には日本語でプレイすることができない状態となっていました。</p>
+      <p>本MODは、残された未翻訳部分（クレジットや一部システム用語など）をゲームの世界観に合わせて完全補完した上で、<strong>プログラム修正によりゲーム内に最初から内包されている美しいドット絵ビットマップフォントへの自動スワップを有効化</strong>した完全日本語化MODです。</p>
+
+      <blockquote>
+        <strong>💡 本MODの主な特徴:</strong><br>
+        ・<strong>全編完全日本語化:</strong> ストーリー、悪魔ルシファーとの対話、壊れたOS、パズル指示、UIまで100%日本語化<br>
+        ・<strong>世界観にマッチしたレトロドット絵フォント:</strong> ゲーム内内包の公式ビットマップフォント（BoutiqueBitmap）で雰囲気抜群<br>
+        ・<strong>アセット非破壊の安全設計:</strong> ゲームの元データ（.assets）を一切改変せず、外部CSVから高速クリーンロード<br>
+        ・<strong>簡単導入:</strong> 解凍したフォルダをゲームディレクトリに上書きするだけで自動で日本語が適用
+      </blockquote>
+
+      <h2>ゲーム画面イメージ</h2>
+      <p>タイトル画面の注意書きから悪魔の皮肉なメッセージ、OSのファイルメニューまで、すべて雰囲気あるレトロフォントで日本語表示されます。</p>
+
+      <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
+        <div>
+          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ 公式ヘッダーアート</h4>
+          <img src="/images/pony-island-header.jpg" alt="Pony Island ヘッダーアート" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+        </div>
+      </div>
+
+      <h2>MODの導入方法（インストール手順）</h2>
+      <ol style="line-height: 1.8; margin-left: 20px;">
+        <li>下記の<strong>「無料ダウンロード」</strong>ボタンから <code>Pony_Island_Japanese_MOD_v1.0.zip</code> をダウンロードします。</li>
+        <li>Steamライブラリで『Pony Island』を右クリック ＞「管理」＞<strong>「ローカルファイルを閲覧」</strong>をクリックして、ゲームのインストール先フォルダを開きます。</li>
+        <li>ダウンロードしたZIPファイルを解凍し、中にある <code>PonyIsland_Data</code> フォルダを、ゲームのインストール先フォルダへそのまま<strong>上書きコピー（ドラッグ＆ドロップ）</strong>します。<br>※「ファイルを置き換える」を選択してください。</li>
+        <li>Steamから通常どおりゲームを起動します。自動的に日本語でゲームが始まります！</li>
+      </ol>
+
+      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 16px; margin: 20px 0; border-radius: 4px;">
+        <strong>⚠️ 英語のまま起動する場合の対処法:</strong><br>
+        Windowsの過去のセーブ設定で言語が固定されている場合があります。同梱の <code>日本語設定を有効化.reg</code> をダブルクリックしてレジストリに登録すると、確実に日本語（ID: 11）が初期言語として有効化されます。
+      </div>
+
+      <h2>アンインストール方法（元に戻す場合）</h2>
+      <p>Steamライブラリで『Pony Island』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞<strong>「ゲームファイルの整合性を確認」</strong>を実行してください。元の状態に完全に戻ります。</p>
+    `
+  },
+  {
     id: "dead-age-brightness",
     title: "【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）",
     summary: "ターン制ゾンビRPG『Dead Age』で夜間探索や雷雨の戦闘が暗すぎて敵が見えない問題を解消する視認性向上MODです。2D UI（文字・HPバー）の白飛びを起こさず、3D背景・キャラクターのみを美しく自然に照らし出します。ゲーム内リアルタイム調整・ホットキー（F5/F7/F8/F10）対応。",
