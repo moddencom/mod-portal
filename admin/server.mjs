@@ -358,16 +358,19 @@ ${promptExtra ? `【追加要望】: ${promptExtra}` : ''}
   }
 
   // --- 静的ファイル配信 ---
-  let reqPath = pathname === '/' || pathname === '/admin' ? '/admin/index.html' : pathname;
-  
-  // admin 配下のファイル配信
-  let filePath = '';
-  if (reqPath.startsWith('/admin/')) {
-    filePath = path.join(ROOT_DIR, reqPath);
-  } else if (reqPath.startsWith('/images/')) {
-    filePath = path.join(ROOT_DIR, reqPath);
-  } else {
-    filePath = path.join(ROOT_DIR, reqPath);
+  let reqPath = pathname;
+  if (reqPath === '/' || reqPath === '/admin' || reqPath === '/admin/') {
+    reqPath = '/admin/index.html';
+  }
+
+  let filePath = path.join(ROOT_DIR, reqPath);
+
+  // ディレクトリ指定の場合は index.html を探す
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    const indexPath = path.join(filePath, 'index.html');
+    if (fs.existsSync(indexPath)) {
+      filePath = indexPath;
+    }
   }
 
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
