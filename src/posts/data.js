@@ -5,28 +5,6 @@
  */
 export const posts = [
   {
-    "id": "lunacid-japanese",
-    "title": "【Lunacid - Tears of the Moon】完全日本語化MOD 配布・導入手順ガイド（Sword of Moonlight純正エンジン・フロム調ダークファンタジー完全復元）",
-    "summary": "フロム・ソフトウェアの名作『キングスフィールド』の精神的後継作として絶大な人気を誇るダンジョンRPG『Lunacid』の公式前日譚『Lunacid - Tears of the Moon』の完全日本語化MODです。英語のままとなっていた全アイテム説明文、全魔法・呪文、全魔物、ダンジョン小道具、ショップ店名を、重厚で哀愁漂うフロム本来の古典ダークファンタジー日本語へと完全復元・統合。美しきDirectDraw明朝フォントで全編完全日本語で楽しめます。",
-    "category": "日本語化",
-    "game": "Lunacid - Tears of the Moon",
-    "version": "Ver 1.0 (2026.10.23)",
-    "date": "2026-10-23",
-    "featuredImage": "/images/lunacid-title.png",
-    "author": "JP Modding Team",
-    "download": {
-      "format": "ZIPアーカイブ (.zip)",
-      "size": "約 29 KB",
-      "gameVersion": "Steam 最新版対応",
-      "assetName": "Lunacid_Japanese_MOD_v1.0.zip",
-      "initialDownloads": 0,
-      "mainUrl": "https://mod-portal.pages.dev/downloads/Lunacid_Japanese_MOD_v1.0.zip",
-      "mirrorUrl": "",
-      "supportUrl": "https://ofuse.me/o?uid=227788"
-    },
-    "content": "\n      <h2>『Lunacid - Tears of the Moon』完全日本語化MODについて</h2>\n      <p>フロム・ソフトウェアの傑作『キングスフィールド』や『シャドウタワー』の遺伝子を色濃く受け継ぎ、Steamで圧倒的高評価を獲得した傑作ダークファンタジーRPG『Lunacid』。</p>\n      <p>本作<strong>『Lunacid - Tears of the Moon』</strong>は、その公式前日譚として、なんと<strong>2000年にフロム・ソフトウェア自身がリリースした純正制作ツール『Sword of Moonlight: King's Field Making Tool』のエンジンそのままを用いて制作された幻のタイトル</strong>です。</p>\n      <p>本作はシステムの骨組み（セーブ・設定・ダイアログUI）やNPC会話の一部にフロム純正の日本語が残されていたものの、作者による英訳編集の都合により、<strong>アイテム説明文・魔法呪文・魔物名・ショップ名などの重要テキストが英語のままチグハグなモザイク状態</strong>となっていました。</p>\n      <p>本MODは、残された英語コンテンツを徹底解析し、<strong>フロム・ソフトウェア本来の重厚・哀愁・格調高き古典ダークファンタジー文体</strong>に合わせて完全統合・再ローカライズした決定版日本語化MODです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>全アイテム完全日本語化:</strong> 武器・防具・装身具・鍵など全61種のアイテム名および重厚な世界観説明文を完全収録<br>\n        ・<strong>全魔法・呪文UI日本語化:</strong> 火球、溶岩球、キュア、光の針、月光の秘術など全呪文名と解説を日本語化<br>\n        ・<strong>全魔物・モンスター図鑑日本語化:</strong> ミルクスネイル、スカンプ、ヘッジスパイダー等の名称および古風な解説調図鑑文<br>\n        ・<strong>ダンジョンオブジェクト・ショップ日本語化:</strong> 棺、崩れし墓、鉄製燭台、光商会、ギルの店など小道具や施設名を完全網羅<br>\n        ・<strong>極上のフォント美:</strong> GAME.EXE の純正 DirectDraw レンダラにより、Windows 標準の美しい明朝体・ゴシック体でくっきり滑らかに描画<br>\n        ・<strong>超軽量＆上書きだけの簡単導入:</strong> わずか 29KB の PARAM フォルダをゲームフォルダに上書きするだけで即座に適用完了\n      </blockquote>\n\n      <h2>ゲーム内スクリーンショット</h2>\n      <div style=\"display: flex; flex-direction: column; gap: 20px; margin: 20px 0;\">\n        <img src=\"/images/lunacid-title.png\" alt=\"Lunacid タイトル画面\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        <img src=\"/images/lunacid-hero.png\" alt=\"Lunacid スプラッシュアート\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n      </div>\n\n      <h2>MODの導入方法（インストール手順）</h2>\n      <ol style=\"line-height: 1.8; margin-left: 20px;\">\n        <li>下記の<strong>「無料ダウンロード」</strong>ボタンより <code>Lunacid_Japanese_MOD_v1.0.zip</code> をダウンロードします。</li>\n        <li>Steamライブラリで『Lunacid - Tears of the Moon』を右クリック ＞「管理」＞<strong>「ローカルファイルを閲覧」</strong>をクリックして、ゲームのインストール先フォルダを開きます。<br>\n        通常パス: <code>SteamLibrary\\steamapps\\common\\Lunacid - Tears of the Moon\\</code></li>\n        <li>ダウンロードしたZIPファイルを解凍し、中にある <code>PARAM</code> フォルダを、ゲームのインストールフォルダへそのまま<strong>上書きコピー（ドラッグ＆ドロップ）</strong>します。<br>\n        ※「ファイルを置き換える」を選択してください。</li>\n        <li>Steamから通常どおりゲームを起動（または GAME.EXE を起動）します。すべてのアイテム・魔法・魔物・ショップが日本語で表示されます！</li>\n      </ol>\n\n      <h2>アンインストール方法（元に戻す場合）</h2>\n      <p>Steamライブラリで『Lunacid - Tears of the Moon』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞<strong>「ゲームファイルの整合性を確認」</strong>を実行するか、PARAM フォルダ内の <code>.bak</code> ファイルを元のファイル名に戻してください。</p>\n"
-  },
-  {
     "id": "pony-island-japanese",
     "title": "【Pony Island】完全日本語化MOD 配布・導入手順ガイド（Steam版対応・全編美麗ビットマップフォント表示）",
     "summary": "悪魔のアーケードゲームに挑むメタフィクションサスペンス傑作『Pony Island』の完全日本語化MODです。未公開のまま眠っていた公式日本語データ約9割を完全補完し、プログラム修正により内包ビットマップフォント描画を有効化。悪魔ルシファーの皮肉、壊れたレトロOS、パズル、ストーリー全編を美麗なドット絵日本語で楽しめます。",
