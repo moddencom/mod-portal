@@ -5,367 +5,113 @@
  */
 export const posts = [
   {
-    id: "pony-island-japanese",
-    title: "【Pony Island】完全日本語化MOD 配布・導入手順ガイド（Steam版対応・全編美麗ビットマップフォント表示）",
-    summary: "悪魔のアーケードゲームに挑むメタフィクションサスペンス傑作『Pony Island』の完全日本語化MODです。未公開のまま眠っていた公式日本語データ約9割を完全補完し、プログラム修正により内包ビットマップフォント描画を有効化。悪魔ルシファーの皮肉、壊れたレトロOS、パズル、ストーリー全編を美麗なドット絵日本語で楽しめます。",
-    category: "日本語化",
-    game: "Pony Island",
-    version: "Ver 1.0 (2026.10.20)",
-    date: "2026-10-20",
-    featuredImage: "/images/pony-island-hero.jpg",
-    author: "JP Modding Team",
-    download: {
-      format: "ZIPアーカイブ (.zip)",
-      size: "約 394 KB",
-      gameVersion: "Steam 最新版対応",
-      assetName: "Pony_Island_Japanese_MOD_v1.0.zip",
-      initialDownloads: 0,
-      mainUrl: "/downloads/Pony_Island_Japanese_MOD_v1.0.zip",
-      mirrorUrl: "",
-      supportUrl: "https://ofuse.me/o?uid=227788"
+    "id": "lunacid-japanese",
+    "title": "【Lunacid - Tears of the Moon】完全日本語化MOD 配布・導入手順ガイド（Sword of Moonlight純正エンジン・フロム調ダークファンタジー完全復元）",
+    "summary": "フロム・ソフトウェアの名作『キングスフィールド』の精神的後継作として絶大な人気を誇るダンジョンRPG『Lunacid』の公式前日譚『Lunacid - Tears of the Moon』の完全日本語化MODです。英語のままとなっていた全アイテム説明文、全魔法・呪文、全魔物、ダンジョン小道具、ショップ店名を、重厚で哀愁漂うフロム本来の古典ダークファンタジー日本語へと完全復元・統合。美しきDirectDraw明朝フォントで全編完全日本語で楽しめます。",
+    "category": "日本語化",
+    "game": "Lunacid - Tears of the Moon",
+    "version": "Ver 1.0 (2026.10.23)",
+    "date": "2026-10-23",
+    "featuredImage": "/images/lunacid-title.png",
+    "author": "JP Modding Team",
+    "download": {
+      "format": "ZIPアーカイブ (.zip)",
+      "size": "約 29 KB",
+      "gameVersion": "Steam 最新版対応",
+      "assetName": "Lunacid_Japanese_MOD_v1.0.zip",
+      "initialDownloads": 0,
+      "mainUrl": "https://mod-portal.pages.dev/downloads/Lunacid_Japanese_MOD_v1.0.zip",
+      "mirrorUrl": "",
+      "supportUrl": "https://ofuse.me/o?uid=227788"
     },
-    content: `
-      <h2>『Pony Island』完全日本語化MODについて</h2>
-      <p>『Inscryption』の作者 Daniel Mullins 氏の原点にして、Steamで圧倒的好評を誇るメタフィクション・パズルサスペンス<strong>『Pony Island』</strong>。</p>
-      <p>実は本作のゲームデータ内には、<strong>開発時に作成された非常に高クオリティな公式日本語訳（全体の約9割）が未公開のまま眠っていました</strong>。しかし、フォント差し替えプログラムの不具合と言語切り替えボタンの未配置により、公式には日本語でプレイすることができない状態となっていました。</p>
-      <p>本MODは、残された未翻訳部分（クレジットや一部システム用語など）をゲームの世界観に合わせて完全補完した上で、<strong>プログラム修正によりゲーム内に最初から内包されている美しいドット絵ビットマップフォントへの自動スワップを有効化</strong>した完全日本語化MODです。</p>
-
-      <blockquote>
-        <strong>💡 本MODの主な特徴:</strong><br>
-        ・<strong>全編完全日本語化:</strong> ストーリー、悪魔ルシファーとの対話、壊れたOS、パズル指示、UIまで100%日本語化<br>
-        ・<strong>世界観にマッチしたレトロドット絵フォント:</strong> ゲーム内内包の公式ビットマップフォント（BoutiqueBitmap）で雰囲気抜群<br>
-        ・<strong>アセット非破壊の安全設計:</strong> ゲームの元データ（.assets）を一切改変せず、外部CSVから高速クリーンロード<br>
-        ・<strong>簡単導入:</strong> 解凍したフォルダをゲームディレクトリに上書きするだけで自動で日本語が適用
-      </blockquote>
-
-      <h2>ゲーム画面イメージ</h2>
-      <p>タイトル画面の注意書きから悪魔の皮肉なメッセージ、OSのファイルメニューまで、すべて雰囲気あるレトロフォントで日本語表示されます。</p>
-
-      <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ 公式ヘッダーアート</h4>
-          <img src="/images/pony-island-header.jpg" alt="Pony Island ヘッダーアート" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-      </div>
-
-      <h2>MODの導入方法（インストール手順）</h2>
-      <ol style="line-height: 1.8; margin-left: 20px;">
-        <li>下記の<strong>「無料ダウンロード」</strong>ボタンから <code>Pony_Island_Japanese_MOD_v1.0.zip</code> をダウンロードします。</li>
-        <li>Steamライブラリで『Pony Island』を右クリック ＞「管理」＞<strong>「ローカルファイルを閲覧」</strong>をクリックして、ゲームのインストール先フォルダを開きます。</li>
-        <li>ダウンロードしたZIPファイルを解凍し、中にある <code>PonyIsland_Data</code> フォルダを、ゲームのインストール先フォルダへそのまま<strong>上書きコピー（ドラッグ＆ドロップ）</strong>します。<br>※「ファイルを置き換える」を選択してください。</li>
-        <li>Steamから通常どおりゲームを起動します。自動的に日本語でゲームが始まります！</li>
-      </ol>
-
-      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 16px; margin: 20px 0; border-radius: 4px;">
-        <strong>⚠️ 英語のまま起動する場合の対処法:</strong><br>
-        Windowsの過去のセーブ設定で言語が固定されている場合があります。同梱の <code>日本語設定を有効化.reg</code> をダブルクリックしてレジストリに登録すると、確実に日本語（ID: 11）が初期言語として有効化されます。
-      </div>
-
-      <h2>アンインストール方法（元に戻す場合）</h2>
-      <p>Steamライブラリで『Pony Island』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞<strong>「ゲームファイルの整合性を確認」</strong>を実行してください。元の状態に完全に戻ります。</p>
-    `
+    "content": "\n      <h2>『Lunacid - Tears of the Moon』完全日本語化MODについて</h2>\n      <p>フロム・ソフトウェアの傑作『キングスフィールド』や『シャドウタワー』の遺伝子を色濃く受け継ぎ、Steamで圧倒的高評価を獲得した傑作ダークファンタジーRPG『Lunacid』。</p>\n      <p>本作<strong>『Lunacid - Tears of the Moon』</strong>は、その公式前日譚として、なんと<strong>2000年にフロム・ソフトウェア自身がリリースした純正制作ツール『Sword of Moonlight: King's Field Making Tool』のエンジンそのままを用いて制作された幻のタイトル</strong>です。</p>\n      <p>本作はシステムの骨組み（セーブ・設定・ダイアログUI）やNPC会話の一部にフロム純正の日本語が残されていたものの、作者による英訳編集の都合により、<strong>アイテム説明文・魔法呪文・魔物名・ショップ名などの重要テキストが英語のままチグハグなモザイク状態</strong>となっていました。</p>\n      <p>本MODは、残された英語コンテンツを徹底解析し、<strong>フロム・ソフトウェア本来の重厚・哀愁・格調高き古典ダークファンタジー文体</strong>に合わせて完全統合・再ローカライズした決定版日本語化MODです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>全アイテム完全日本語化:</strong> 武器・防具・装身具・鍵など全61種のアイテム名および重厚な世界観説明文を完全収録<br>\n        ・<strong>全魔法・呪文UI日本語化:</strong> 火球、溶岩球、キュア、光の針、月光の秘術など全呪文名と解説を日本語化<br>\n        ・<strong>全魔物・モンスター図鑑日本語化:</strong> ミルクスネイル、スカンプ、ヘッジスパイダー等の名称および古風な解説調図鑑文<br>\n        ・<strong>ダンジョンオブジェクト・ショップ日本語化:</strong> 棺、崩れし墓、鉄製燭台、光商会、ギルの店など小道具や施設名を完全網羅<br>\n        ・<strong>極上のフォント美:</strong> GAME.EXE の純正 DirectDraw レンダラにより、Windows 標準の美しい明朝体・ゴシック体でくっきり滑らかに描画<br>\n        ・<strong>超軽量＆上書きだけの簡単導入:</strong> わずか 29KB の PARAM フォルダをゲームフォルダに上書きするだけで即座に適用完了\n      </blockquote>\n\n      <h2>ゲーム内スクリーンショット</h2>\n      <div style=\"display: flex; flex-direction: column; gap: 20px; margin: 20px 0;\">\n        <img src=\"/images/lunacid-title.png\" alt=\"Lunacid タイトル画面\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        <img src=\"/images/lunacid-hero.png\" alt=\"Lunacid スプラッシュアート\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n      </div>\n\n      <h2>MODの導入方法（インストール手順）</h2>\n      <ol style=\"line-height: 1.8; margin-left: 20px;\">\n        <li>下記の<strong>「無料ダウンロード」</strong>ボタンより <code>Lunacid_Japanese_MOD_v1.0.zip</code> をダウンロードします。</li>\n        <li>Steamライブラリで『Lunacid - Tears of the Moon』を右クリック ＞「管理」＞<strong>「ローカルファイルを閲覧」</strong>をクリックして、ゲームのインストール先フォルダを開きます。<br>\n        通常パス: <code>SteamLibrary\\steamapps\\common\\Lunacid - Tears of the Moon\\</code></li>\n        <li>ダウンロードしたZIPファイルを解凍し、中にある <code>PARAM</code> フォルダを、ゲームのインストールフォルダへそのまま<strong>上書きコピー（ドラッグ＆ドロップ）</strong>します。<br>\n        ※「ファイルを置き換える」を選択してください。</li>\n        <li>Steamから通常どおりゲームを起動（または GAME.EXE を起動）します。すべてのアイテム・魔法・魔物・ショップが日本語で表示されます！</li>\n      </ol>\n\n      <h2>アンインストール方法（元に戻す場合）</h2>\n      <p>Steamライブラリで『Lunacid - Tears of the Moon』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞<strong>「ゲームファイルの整合性を確認」</strong>を実行するか、PARAM フォルダ内の <code>.bak</code> ファイルを元のファイル名に戻してください。</p>\n"
   },
   {
-    id: "dead-age-brightness",
-    title: "【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）",
-    summary: "ターン制ゾンビRPG『Dead Age』で夜間探索や雷雨の戦闘が暗すぎて敵が見えない問題を解消する視認性向上MODです。2D UI（文字・HPバー）の白飛びを起こさず、3D背景・キャラクターのみを美しく自然に照らし出します。ゲーム内リアルタイム調整・ホットキー（F5/F7/F8/F10）対応。",
-    category: "ユーティリティ / 改善",
-    game: "Dead Age",
-    version: "Ver 1.0 (2026.10.18)",
-    date: "2026-10-18",
-    featuredImage: "/images/dead-age-brightness-hero.jpg",
-    author: "JP Modding Team",
-    download: {
-      format: "ZIPアーカイブ (.zip)",
-      size: "約 646 KB",
-      gameVersion: "Steam 最新版対応",
-      assetName: "DeadAge_Brightness_Mod_v1.0.zip",
-      initialDownloads: 0,
-      mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.2.0/DeadAge_Brightness_Mod_v1.0.zip",
-      mirrorUrl: "https://workupload.com/file/xtVV9pnxhS9",
-      supportUrl: "https://ofuse.me/o?uid=227788"
+    "id": "pony-island-japanese",
+    "title": "【Pony Island】完全日本語化MOD 配布・導入手順ガイド（Steam版対応・全編美麗ビットマップフォント表示）",
+    "summary": "悪魔のアーケードゲームに挑むメタフィクションサスペンス傑作『Pony Island』の完全日本語化MODです。未公開のまま眠っていた公式日本語データ約9割を完全補完し、プログラム修正により内包ビットマップフォント描画を有効化。悪魔ルシファーの皮肉、壊れたレトロOS、パズル、ストーリー全編を美麗なドット絵日本語で楽しめます。",
+    "category": "日本語化",
+    "game": "Pony Island",
+    "version": "Ver 1.0 (2026.10.20)",
+    "date": "2026-10-20",
+    "featuredImage": "/images/__________2026-10-20_231839_1792506068083.png",
+    "author": "JP Modding Team",
+    "download": {
+      "format": "ZIPアーカイブ (.zip)",
+      "size": "約 394 KB",
+      "gameVersion": "Steam 最新版対応",
+      "assetName": "Pony_Island_Japanese_MOD_v1.0.zip",
+      "initialDownloads": 0,
+      "mainUrl": "https://mod-portal.pages.dev/downloads/Pony_Island_Japanese_MOD_v1.0.zip",
+      "mirrorUrl": "",
+      "supportUrl": "https://ofuse.me/o?uid=227788"
     },
-    content: `
-      <h2>『Dead Age』夜間・戦闘 明るさ＆視認性調整MODについて</h2>
-      <p>『Dead Age』をプレイしていて、<strong>「夜の探索や雨・雷の戦闘シーンが暗すぎて、敵やキャラクターがどこにいるのか全然見えない…！」</strong>と困ったことはありませんか？</p>
-      <p>本作にはゲーム内設定にガンマや輝度の調整項目が存在せず、モニタ自体の明るさを上げると今度はUI文字やHPバーが白飛びして読めなくなってしまうという課題がありました。</p>
-      <p>本MODは、Unityエンジン内部の<strong>環境光（Ambient Light）およびカメラ連動の補助照明（Camera Fill Light）</strong>を高度に制御することで、<strong>UIのコントラストを保ったまま、暗闇に沈んでいた敵や味方、3D背景だけをクッキリ美しく照らし出す</strong>専用ユーティリティMODです。</p>
-
-      <blockquote>
-        <strong>💡 本MODの主な特徴:</strong><br>
-        ・<strong>UI文字が白飛びしない:</strong> 2D UIレイヤーを除外し、3Dオブジェクト・背景のみを自然にライティング<br>
-        ・<strong>ゲーム内リアルタイム調整:</strong> プレイ中にホットキー（F5/F7/F8）で即時調光、F10でGUIスライダー画面を開閉<br>
-        ・<strong>選べる4段階プリセット:</strong> 「標準」「夜間おすすめ」「クリアナイト」「最大(昼間級)」をワンクリック適用<br>
-        ・<strong>設定の自動保存:</strong> スライダーで調整した設定は次回起動時にもそのまま保持<br>
-        ・<strong>完全共存:</strong> 当サイトで配布中の「Dead Age 完全日本語化MOD」とも100%安全に併用可能
-      </blockquote>
-
-      <h2>ゲーム内スクリーンショット</h2>
-      <p>実際に本MODを適用したゲーム画面です。暗闇だったハイウェイの戦闘シーンでも、敵ゾンビの姿や味方キャラクターが鮮明に浮かび上がり、快適にコマンド選択を行えます。</p>
-
-      <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ 夜間ハイウェイ戦闘（視認性向上・UI白飛びなし）</h4>
-          <img src="/images/dead-age-brightness-preview.jpg" alt="Dead Age 明るさ調整MOD 適用後戦闘画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ゲーム内設定画面 [F10キー]（マウス操作・スライダー・プリセット）</h4>
-          <img src="/images/dead-age-brightness-gui.jpg" alt="Dead Age 明るさ調整MOD 設定メニュー" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-      </div>
-
-      <h2>操作方法・ショートカットキー</h2>
-      <p>ゲームプレイ中、いつでもキーボードから瞬時に明るさを切り替えることができます：</p>
-
-      <div style="overflow-x: auto; margin: 16px 0;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left; background: rgba(255, 255, 255, 0.03); border-radius: 8px; overflow: hidden;">
-          <thead>
-            <tr style="background: rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-              <th style="padding: 12px 16px; width: 25%;">キー</th>
-              <th style="padding: 12px 16px; width: 35%;">機能</th>
-              <th style="padding: 12px 16px;">説明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-              <td style="padding: 10px 16px;"><code>[F5]</code></td>
-              <td style="padding: 10px 16px;"><strong>ブースト ON / OFF</strong></td>
-              <td style="padding: 10px 16px;">明るさブーストの有効／無効（バニラ標準）を即座に切り替えます</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-              <td style="padding: 10px 16px;"><code>[F8]</code> / <code>[+]</code></td>
-              <td style="padding: 10px 16px;"><strong>明るさアップ</strong></td>
-              <td style="padding: 10px 16px;">明るさを +0.2x ずつ段階的に明るくします（最大 4.0x）</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-              <td style="padding: 10px 16px;"><code>[F7]</code> / <code>[-]</code></td>
-              <td style="padding: 10px 16px;"><strong>明るさダウン</strong></td>
-              <td style="padding: 10px 16px;">明るさを -0.2x ずつ段階的に暗くします（最小 0.5x）</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
-              <td style="padding: 10px 16px;"><code>[F6]</code></td>
-              <td style="padding: 10px 16px;"><strong>標準リセット</strong></td>
-              <td style="padding: 10px 16px;">初期値（バニラ標準の1.0x）に一括リセットします</td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 16px;"><code>[F10]</code></td>
-              <td style="padding: 10px 16px;"><strong>設定メニュー開閉</strong></td>
-              <td style="padding: 10px 16px;">マウス操作できる詳細設定ウィンドウ（GUI）を表示／非表示にします</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p>※キー操作時には、画面上部に現在の明るさ倍率（例: <code>★ 明るさブースト: ON (1.8x)</code>）が一時的にポップアップ表示されます。</p>
-
-      <h2>MODの導入手順（ステップ解説）</h2>
-      <p>導入は非常にシンプルです。ファイルをゲームのインストールフォルダに配置するだけで完了します。</p>
-
-      <div class="step-box">
-        <span class="step-num">STEP 1</span>
-        <h3>MODファイルのダウンロード</h3>
-        <p>下記ダウンロードエリアより、MODファイル（<code>DeadAge_Brightness_Mod_v1.0.zip</code>）をダウンロードします。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 2</span>
-        <h3>ゲームのインストール先フォルダを開く</h3>
-        <p>Steamライブラリから『Dead Age』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>
-        <p><code>DeadAge.exe</code> が存在するゲームのルートフォルダが開きます。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 3</span>
-        <h3>ファイルをコピーしてゲーム起動</h3>
-        <p>ダウンロードしたZIPファイルを解凍し、中にある以下のファイル・フォルダをすべて『Dead Age』のインストールフォルダ（DeadAge.exeと同じ場所）にドラッグ＆ドロップでコピーしてください：</p>
-        <ul>
-          <li><code>winhttp.dll</code></li>
-          <li><code>doorstop_config.ini</code></li>
-          <li><code>BepInEx</code> (フォルダ)</li>
-        </ul>
-        <p>あとは通常どおりSteamからゲームを起動するだけでModが自動的に読み込まれます！</p>
-      </div>
-
-      <h2>アンインストール方法（元の状態に戻す）</h2>
-      <p>配置した以下のファイル・フォルダを削除するだけで、即座に元の状態に戻ります：</p>
-      <ul>
-        <li><code>winhttp.dll</code></li>
-        <li><code>doorstop_config.ini</code></li>
-        <li><code>BepInEx</code> (フォルダ)</li>
-      </ul>
-
-      <h2>免責事項・注意事項</h2>
-      <div style="background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;">
-        <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-          <li><strong>非公式ツール:</strong> 本MODは一個人ファンによる非公式の視認性改善ツールです。ゲームの開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。</li>
-          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合等に関しましても、制作者は責任を負いかねます。</li>
-          <li><strong>日本語化MODとの併用について:</strong> 当サイトの「Dead Age 完全日本語化MOD」と完全に互換性があり、併用してプレイいただけます。</li>
-        </ul>
-      </div>
-    `
+    "content": "\n      <h2>『Pony Island』完全日本語化MODについて</h2>\n      <p>『Inscryption』の作者 Daniel Mullins 氏の原点にして、Steamで圧倒的好評を誇るメタフィクション・パズルサスペンス<strong>『Pony Island』</strong>。</p>\n      <p>実は本作のゲームデータ内には、<strong>開発時に作成された非常に高クオリティな公式日本語訳（全体の約9割）が未公開のまま眠っていました</strong>。しかし、フォント差し替えプログラムの不具合と言語切り替えボタンの未配置により、公式には日本語でプレイすることができない状態となっていました。</p>\n      <p>本MODは、残された未翻訳部分（クレジットや一部システム用語など）をゲームの世界観に合わせて完全補完した上で、<strong>プログラム修正によりゲーム内に最初から内包されている美しいドット絵ビットマップフォントへの自動スワップを有効化</strong>した完全日本語化MODです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>全編完全日本語化:</strong> ストーリー、悪魔ルシファーとの対話、壊れたOS、パズル指示、UIまで100%日本語化<br>\n        ・<strong>世界観にマッチしたレトロドット絵フォント:</strong> ゲーム内内包の公式ビットマップフォント（BoutiqueBitmap）で雰囲気抜群<br>\n        ・<strong>アセット非破壊の安全設計:</strong> ゲームの元データ（.assets）を一切改変せず、外部CSVから高速クリーンロード<br>\n        ・<strong>簡単導入:</strong> 解凍したフォルダをゲームディレクトリに上書きするだけで自動で日本語が適用\n      </blockquote>\n\n     \n      <h2>MODの導入方法（インストール手順）</h2>\n      <ol style=\"line-height: 1.8; margin-left: 20px;\">\n        <li>下記の<strong>「無料ダウンロード」</strong>ボタンから <code>Pony_Island_Japanese_MOD_v1.0.zip</code> をダウンロードします。</li>\n        <li>Steamライブラリで『Pony Island』を右クリック ＞「管理」＞<strong>「ローカルファイルを閲覧」</strong>をクリックして、ゲームのインストール先フォルダを開きます。</li>\n        <li>ダウンロードしたZIPファイルを解凍し、中にある <code>PonyIsland_Data</code> フォルダを、ゲームのインストール先フォルダへそのまま<strong>上書きコピー（ドラッグ＆ドロップ）</strong>します。<br>※「ファイルを置き換える」を選択してください。</li>\n        <li>Steamから通常どおりゲームを起動します。自動的に日本語でゲームが始まります！</li>\n      </ol>\n\n      <div style=\"background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 16px; margin: 20px 0; border-radius: 4px;\">\n        <strong>⚠️ 英語のまま起動する場合の対処法:</strong><br>\n        Windowsの過去のセーブ設定で言語が固定されている場合があります。同梱の <code>日本語設定を有効化.reg</code> をダブルクリックしてレジストリに登録すると、確実に日本語（ID: 11）が初期言語として有効化されます。\n      </div>\n\n      <h2>アンインストール方法（元に戻す場合）</h2>\n      <p>Steamライブラリで『Pony Island』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞<strong>「ゲームファイルの整合性を確認」</strong>を実行してください。元の状態に完全に戻ります。</p>\n    \n<img src=\"/images/__________2026-10-20_232349_1792506253044.png\" alt=\"スクリーンショット 2026-10-20 232349\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);\" />\n"
   },
   {
-    id: "dead-age",
-
-    title: "【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）",
-    summary: "ターン制ゾンビサバイバルRPG『Dead Age』の有志による完全日本語化MODです。全編にわたる会話・ストーリーの映画吹き替え風ローカライズ、敵名・スキル・装備名の自然な日本語化、さらに高品質日本語フォント（BIZ UDPゴシック）への完全置換を実施。",
-    category: "RPG / サバイバル",
-    game: "Dead Age",
-    version: "Ver 1.0 (2026.10.18)",
-    date: "2026-10-18",
-    featuredImage: "/images/dead-age-hero.png",
-    author: "JP Modding Team",
-    download: {
-      format: "ZIPアーカイブ (.zip)",
-      size: "約 93.3 MB",
-      gameVersion: "Steam 最新版対応",
-      assetName: "DeadAge_JP_Mod_v1.0.zip",
-      initialDownloads: 0,
-      mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip",
-      mirrorUrl: "https://workupload.com/file/57PgZkSPcV5",
-      supportUrl: "https://ofuse.me/o?uid=227788"
+    "id": "dead-age-brightness",
+    "title": "【Dead Age】夜間・戦闘 明るさ＆視認性調整MOD 配布・導入手順ガイド（Steam版・F10設定GUI対応）",
+    "summary": "ターン制ゾンビRPG『Dead Age』で夜間探索や雷雨の戦闘が暗すぎて敵が見えない問題を解消する視認性向上MODです。2D UI（文字・HPバー）の白飛びを起こさず、3D背景・キャラクターのみを美しく自然に照らし出します。ゲーム内リアルタイム調整・ホットキー（F5/F7/F8/F10）対応。",
+    "category": "ユーティリティ / 改善",
+    "game": "Dead Age",
+    "version": "Ver 1.0 (2026.10.18)",
+    "date": "2026-10-18",
+    "featuredImage": "/images/dead-age-brightness-hero.jpg",
+    "author": "JP Modding Team",
+    "download": {
+      "format": "ZIPアーカイブ (.zip)",
+      "size": "約 646 KB",
+      "gameVersion": "Steam 最新版対応",
+      "assetName": "DeadAge_Brightness_Mod_v1.0.zip",
+      "initialDownloads": 0,
+      "mainUrl": "https://github.com/moddencom/mod-portal/releases/download/v1.2.0/DeadAge_Brightness_Mod_v1.0.zip",
+      "mirrorUrl": "https://workupload.com/file/xtVV9pnxhS9",
+      "supportUrl": "https://ofuse.me/o?uid=227788"
     },
-    content: `
-      <h2>『Dead Age』完全日本語化MODについて</h2>
-      <p>『Dead Age』は、文明崩壊後の世界を生き抜くターン制コマンドバトルRPGです。キャンプ運営、仲間との人間関係、パーマデス、そしてマルチエンディングなど奥深いゲーム性を誇りますが、公式日本語は非対応（または機械翻訳）となっていました。</p>
-      <p>本MODでは、プレイヤーが没入できるよう<strong>全編のストーリー・セリフ・独白を洋画吹き替え風の自然な日本語に徹底ローカライズ</strong>。さらに機械翻訳特有の不自然な敵名（「レイジング・ベイグラント」「アンデッドラボアシスタント」等）や装備品・スキルの名称、UIレイアウトに至るまで完全に洗練しています。</p>
-
-      <blockquote>
-        <strong>💡 本MODの特徴:</strong><br>
-        ・<strong>完全自然なストーリー翻訳:</strong> 主人公ジャックのタフな独白、シェリフやトリッシュ、ハンクらの個性豊かな掛け合いを映画さながらの台詞回しに全面刷新<br>
-        ・<strong>モリサワ製 高品質ユニバーサルデザインフォント採用:</strong> 商用・再配布フリーの「BIZ UDPゴシック Bold」をUnityアセットに直接組み込み、見やすく美しいタイポグラフィを実現<br>
-        ・<strong>戦闘・敵名・装備の完全監修:</strong> 「耐久力」「会心率」「レジスト」「ニット帽」などゲーム用語として直感的な表記に統一<br>
-        ・<strong>ワンタッチ導入:</strong> ゲームフォルダにドラッグ＆ドロップするだけで即座にプレイ可能
-      </blockquote>
-
-      <h2>日本語化MODのスクリーンショット</h2>
-      <p>タイトル画面、サバイバル手帳、NPCたちとの熱い会話ドラマ、ショップや装備画面に至るまで、美しい日本語フォント（BIZ UDPゴシック）と自然な台詞回しで快適にプレイ可能です。</p>
-
-      <div style="display: flex; flex-direction: column; gap: 24px; margin: 24px 0;">
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ タイトル画面（日本語メニュー表示）</h4>
-          <img src="/images/dead-age-preview-title.jpg" alt="Dead Age 日本語化タイトル画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ハンク＆リディアの会話シーン（映画吹き替え調の自然な台詞）</h4>
-          <img src="/images/dead-age-preview-hank-lydia.jpg" alt="Dead Age ハンクのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
-          <img src="/images/dead-age-preview-lydia.jpg" alt="Dead Age リディアのセリフ" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;" />
-          <img src="/images/dead-age-preview-hank.jpg" alt="Dead Age ハンクの掛け合い" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-
-        <div>
-          <h4 style="margin-bottom: 8px; color: var(--text-heading, #fff);">▼ ショップ＆アイテムインベントリ（UI・装備品名の最適化）</h4>
-          <img src="/images/dead-age-preview-shop.jpg" alt="Dead Age ショップ画面" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
-        </div>
-      </div>
-
-      <h2>MODの導入手順（ステップ解説）</h2>
-      <p>導入は非常にシンプルです。ダウンロードしたZIPファイルを解凍し、ゲームフォルダに上書きするだけで完了します。</p>
-
-      <div class="step-box">
-        <span class="step-num">STEP 1</span>
-        <h3>MODファイルのダウンロード</h3>
-        <p>下記ダウンロードエリアより、最新のMODファイル（<code>DeadAge_JP_Mod_v1.0.zip</code>）をダウンロードします。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 2</span>
-        <h3>ゲームのインストール先フォルダを開く</h3>
-        <p>Steamライブラリから『Dead Age』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>
-        <p>ゲームの実行ファイル（<code>DeadAge.exe</code>）や <code>DeadAge_Data</code> フォルダが存在するフォルダが開きます。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 3</span>
-        <h3>ファイルを上書き配置してゲーム起動</h3>
-        <p>ダウンロードしたZIPを解凍し、中にある <code>DeadAge_Data</code> フォルダを『Dead Age』のインストールフォルダにドラッグ＆ドロップして上書きしてください。</p>
-        <p>ゲームを起動し、言語設定（画面右上の国旗アイコン）で「中文（中国国旗）」を選択すると、日本語化が完全に反映されます。</p>
-      </div>
-
-      <h2>アンインストール方法（元の状態に戻す）</h2>
-      <p>いつでも元の初期状態（公式バニラ）に戻すことができます。<br>
-      Steamライブラリで『Dead Age』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」をクリックしてください。Steamによって公式ファイルが自動再ダウンロードされ、安全に復元されます。</p>
-
-      <h2>免責事項・注意事項</h2>
-      <div style="background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;">
-        <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-          <li><strong>非公式パッチ:</strong> 本MODは一個人ファンによる有志の非公式日本語化パッチです。開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。公式サポートへのお問い合わせは固くお控えください。</li>
-          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合、セーブデータの破損、トラブル等に関しましても、制作者は一切の責任を負いかねます。大切なデータがある場合は事前のバックアップを推奨します。</li>
-          <li><strong>フォントライセンス:</strong> ゲーム内に組み込まれている日本語フォント「BIZ UDPゴシック」は、株式会社モリサワが提供するオープンソースフォント（SIL Open Font License 1.1）に基づき、正規に同梱・利用されています。</li>
-          <li><strong>著作権について:</strong> ゲーム本編のキャラクター、テキスト原案、画像、プログラム等の著作権はすべて原著作者に帰属します。本MODファイルの商用販売や無断再配布は禁止いたします。</li>
-        </ul>
-      </div>
-    `
+    "content": "\n      <h2>『Dead Age』夜間・戦闘 明るさ＆視認性調整MODについて</h2>\n      <p>『Dead Age』をプレイしていて、<strong>「夜の探索や雨・雷の戦闘シーンが暗すぎて、敵やキャラクターがどこにいるのか全然見えない…！」</strong>と困ったことはありませんか？</p>\n      <p>本作にはゲーム内設定にガンマや輝度の調整項目が存在せず、モニタ自体の明るさを上げると今度はUI文字やHPバーが白飛びして読めなくなってしまうという課題がありました。</p>\n      <p>本MODは、Unityエンジン内部の<strong>環境光（Ambient Light）およびカメラ連動の補助照明（Camera Fill Light）</strong>を高度に制御することで、<strong>UIのコントラストを保ったまま、暗闇に沈んでいた敵や味方、3D背景だけをクッキリ美しく照らし出す</strong>専用ユーティリティMODです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>UI文字が白飛びしない:</strong> 2D UIレイヤーを除外し、3Dオブジェクト・背景のみを自然にライティング<br>\n        ・<strong>ゲーム内リアルタイム調整:</strong> プレイ中にホットキー（F5/F7/F8）で即時調光、F10でGUIスライダー画面を開閉<br>\n        ・<strong>選べる4段階プリセット:</strong> 「標準」「夜間おすすめ」「クリアナイト」「最大(昼間級)」をワンクリック適用<br>\n        ・<strong>設定の自動保存:</strong> スライダーで調整した設定は次回起動時にもそのまま保持<br>\n        ・<strong>完全共存:</strong> 当サイトで配布中の「Dead Age 完全日本語化MOD」とも100%安全に併用可能\n      </blockquote>\n\n      <h2>ゲーム内スクリーンショット</h2>\n      <p>実際に本MODを適用したゲーム画面です。暗闇だったハイウェイの戦闘シーンでも、敵ゾンビの姿や味方キャラクターが鮮明に浮かび上がり、快適にコマンド選択を行えます。</p>\n\n      <div style=\"display: flex; flex-direction: column; gap: 24px; margin: 24px 0;\">\n        <div>\n          <h4 style=\"margin-bottom: 8px; color: var(--text-heading, #fff);\">▼ 夜間ハイウェイ戦闘（視認性向上・UI白飛びなし）</h4>\n          <img src=\"/images/dead-age-brightness-preview.jpg\" alt=\"Dead Age 明るさ調整MOD 適用後戦闘画面\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        </div>\n\n        <div>\n          <h4 style=\"margin-bottom: 8px; color: var(--text-heading, #fff);\">▼ ゲーム内設定画面 [F10キー]（マウス操作・スライダー・プリセット）</h4>\n          <img src=\"/images/dead-age-brightness-gui.jpg\" alt=\"Dead Age 明るさ調整MOD 設定メニュー\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        </div>\n      </div>\n\n      <h2>操作方法・ショートカットキー</h2>\n      <p>ゲームプレイ中、いつでもキーボードから瞬時に明るさを切り替えることができます：</p>\n\n      <div style=\"overflow-x: auto; margin: 16px 0;\">\n        <table style=\"width: 100%; border-collapse: collapse; text-align: left; background: rgba(255, 255, 255, 0.03); border-radius: 8px; overflow: hidden;\">\n          <thead>\n            <tr style=\"background: rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.1);\">\n              <th style=\"padding: 12px 16px; width: 25%;\">キー</th>\n              <th style=\"padding: 12px 16px; width: 35%;\">機能</th>\n              <th style=\"padding: 12px 16px;\">説明</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr style=\"border-bottom: 1px solid rgba(255, 255, 255, 0.05);\">\n              <td style=\"padding: 10px 16px;\"><code>[F5]</code></td>\n              <td style=\"padding: 10px 16px;\"><strong>ブースト ON / OFF</strong></td>\n              <td style=\"padding: 10px 16px;\">明るさブーストの有効／無効（バニラ標準）を即座に切り替えます</td>\n            </tr>\n            <tr style=\"border-bottom: 1px solid rgba(255, 255, 255, 0.05);\">\n              <td style=\"padding: 10px 16px;\"><code>[F8]</code> / <code>[+]</code></td>\n              <td style=\"padding: 10px 16px;\"><strong>明るさアップ</strong></td>\n              <td style=\"padding: 10px 16px;\">明るさを +0.2x ずつ段階的に明るくします（最大 4.0x）</td>\n            </tr>\n            <tr style=\"border-bottom: 1px solid rgba(255, 255, 255, 0.05);\">\n              <td style=\"padding: 10px 16px;\"><code>[F7]</code> / <code>[-]</code></td>\n              <td style=\"padding: 10px 16px;\"><strong>明るさダウン</strong></td>\n              <td style=\"padding: 10px 16px;\">明るさを -0.2x ずつ段階的に暗くします（最小 0.5x）</td>\n            </tr>\n            <tr style=\"border-bottom: 1px solid rgba(255, 255, 255, 0.05);\">\n              <td style=\"padding: 10px 16px;\"><code>[F6]</code></td>\n              <td style=\"padding: 10px 16px;\"><strong>標準リセット</strong></td>\n              <td style=\"padding: 10px 16px;\">初期値（バニラ標準の1.0x）に一括リセットします</td>\n            </tr>\n            <tr>\n              <td style=\"padding: 10px 16px;\"><code>[F10]</code></td>\n              <td style=\"padding: 10px 16px;\"><strong>設定メニュー開閉</strong></td>\n              <td style=\"padding: 10px 16px;\">マウス操作できる詳細設定ウィンドウ（GUI）を表示／非表示にします</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <p>※キー操作時には、画面上部に現在の明るさ倍率（例: <code>★ 明るさブースト: ON (1.8x)</code>）が一時的にポップアップ表示されます。</p>\n\n      <h2>MODの導入手順（ステップ解説）</h2>\n      <p>導入は非常にシンプルです。ファイルをゲームのインストールフォルダに配置するだけで完了します。</p>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 1</span>\n        <h3>MODファイルのダウンロード</h3>\n        <p>下記ダウンロードエリアより、MODファイル（<code>DeadAge_Brightness_Mod_v1.0.zip</code>）をダウンロードします。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 2</span>\n        <h3>ゲームのインストール先フォルダを開く</h3>\n        <p>Steamライブラリから『Dead Age』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>\n        <p><code>DeadAge.exe</code> が存在するゲームのルートフォルダが開きます。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 3</span>\n        <h3>ファイルをコピーしてゲーム起動</h3>\n        <p>ダウンロードしたZIPファイルを解凍し、中にある以下のファイル・フォルダをすべて『Dead Age』のインストールフォルダ（DeadAge.exeと同じ場所）にドラッグ＆ドロップでコピーしてください：</p>\n        <ul>\n          <li><code>winhttp.dll</code></li>\n          <li><code>doorstop_config.ini</code></li>\n          <li><code>BepInEx</code> (フォルダ)</li>\n        </ul>\n        <p>あとは通常どおりSteamからゲームを起動するだけでModが自動的に読み込まれます！</p>\n      </div>\n\n      <h2>アンインストール方法（元の状態に戻す）</h2>\n      <p>配置した以下のファイル・フォルダを削除するだけで、即座に元の状態に戻ります：</p>\n      <ul>\n        <li><code>winhttp.dll</code></li>\n        <li><code>doorstop_config.ini</code></li>\n        <li><code>BepInEx</code> (フォルダ)</li>\n      </ul>\n\n      <h2>免責事項・注意事項</h2>\n      <div style=\"background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;\">\n        <ul style=\"margin: 0; padding-left: 20px; line-height: 1.8;\">\n          <li><strong>非公式ツール:</strong> 本MODは一個人ファンによる非公式の視認性改善ツールです。ゲームの開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。</li>\n          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合等に関しましても、制作者は責任を負いかねます。</li>\n          <li><strong>日本語化MODとの併用について:</strong> 当サイトの「Dead Age 完全日本語化MOD」と完全に互換性があり、併用してプレイいただけます。</li>\n        </ul>\n      </div>\n    "
   },
   {
-    id: "high-on-life",
-    title: "【High on Life】日本語化MOD 配布・導入手順ガイド（Steam / Game Pass対応）",
-    summary: "Rick and Mortyのクリエイターが手掛ける異色コメディFPS『High on Life』の有志日本語化MODです。全字幕・手紙・UIの完全ローカライズ、フォント置換により快適にプレイ可能です。",
-    category: "FPS / コメディ",
-    game: "High on Life",
-    version: "Ver 1.0 (2026.10.18)",
-    date: "2026-10-18",
-    featuredImage: "/images/high-on-life-hero.png",
-    author: "JP Modding Team",
-    download: {
-      format: "PAKファイル (.pak)",
-      size: "約 443 MB",
-      gameVersion: "Steam / Xbox Game Pass 最新版",
-      assetName: "Oregon-WindowsNoEditor_JP.pak",
-      initialDownloads: 1,
-      mainUrl: "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak", // GitHub Releasesの1クリック直DLリンク
-      mirrorUrl: "https://workupload.com/file/NQ2BQR9sRD9", // WorkUpload ミラーリンク
-      supportUrl: "https://ofuse.me/o?uid=227788" // OFUSE 投げ銭・支援リンク
+    "id": "dead-age",
+    "title": "【Dead Age】完全日本語化MOD 配布・導入手順ガイド（Steam対応）",
+    "summary": "ターン制ゾンビサバイバルRPG『Dead Age』の有志による完全日本語化MODです。全編にわたる会話・ストーリーの映画吹き替え風ローカライズ、敵名・スキル・装備名の自然な日本語化、さらに高品質日本語フォント（BIZ UDPゴシック）への完全置換を実施。",
+    "category": "RPG / サバイバル",
+    "game": "Dead Age",
+    "version": "Ver 1.0 (2026.10.18)",
+    "date": "2026-10-18",
+    "featuredImage": "/images/dead-age-hero.png",
+    "author": "JP Modding Team",
+    "download": {
+      "format": "ZIPアーカイブ (.zip)",
+      "size": "約 93.3 MB",
+      "gameVersion": "Steam 最新版対応",
+      "assetName": "DeadAge_JP_Mod_v1.0.zip",
+      "initialDownloads": 0,
+      "mainUrl": "https://github.com/moddencom/mod-portal/releases/download/v1.1.0/DeadAge_JP_Mod_v1.0.zip",
+      "mirrorUrl": "https://workupload.com/file/57PgZkSPcV5",
+      "supportUrl": "https://ofuse.me/o?uid=227788"
     },
-    content: `
-      <h2>『High on Life』日本語化MODについて</h2>
-      <p>『High on Life』は、軽快なトークと下品で強烈なギャグが魅力のSFアクションFPSですが、公式では日本語に対応していません。本MODを導入することで、ゲーム内の字幕、銃（ガトリアン）たちの掛け合い、アイテム説明、イベントレターなどがすべて自然な日本語で表示されるようになります。</p>
-
-      <blockquote>
-        <strong>💡 本MODの特徴:</strong><br>
-        ・ゲーム内全49箇所のフォントを読みやすい高品質日本語フォントに完全置換<br>
-        ・英語に巻き戻ってしまう不具合（ハッシュ値不一致）を完全修正済み<br>
-        ・字幕の文字見切れ・はみ出しを防ぐ最適化改行処理を適用
-      </blockquote>
-
-      <h2>日本語化MODのスクリーンショット</h2>
-      <p>ゲーム内の会話字幕やメニュー画面、各種UIが以下のように日本語で違和感なく表示されます。</p>
-      <img src="/images/hol-preview-gameplay.png" alt="High on Life 日本語化ゲーム画面" />
-
-      <h2>MODの導入手順（ステップ解説）</h2>
-      <p>導入は非常に簡単です。ダウンロードしたPAKファイルを指定のフォルダに配置するだけで完了します。</p>
-
-      <div class="step-box">
-        <span class="step-num">STEP 1</span>
-        <h3>MODファイルのダウンロード</h3>
-        <p>下記ダウンロードエリアより、最新のMODファイル（<code>Oregon-WindowsNoEditor_JP.pak</code>）をダウンロードします。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 2</span>
-        <h3>ゲームのインストール先フォルダを開く</h3>
-        <p>Steamライブラリから『High on Life』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>
-        <p>以下のフォルダを開いてください：<br>
-        <code>Oregon\\Content\\Paks\\~mods\\</code><br>
-        ※<code>~mods</code> フォルダが存在しない場合は、新規作成してください。</p>
-      </div>
-
-      <div class="step-box">
-        <span class="step-num">STEP 3</span>
-        <h3>ファイルを配置してゲーム起動</h3>
-        <p>ダウンロードしたPAKファイルを <code>~mods</code> フォルダ内にそのままコピー＆ペーストします。ゲームを起動すると自動的に日本語化が適用されます。</p>
-      </div>
-
-      <h2>アンインストール方法</h2>
-      <p><code>~mods</code> フォルダに配置した <code>Oregon-WindowsNoEditor_JP.pak</code> を削除するだけで、安全に元の英語版に戻すことができます。</p>
-
-      <h2>免責事項・注意事項</h2>
-      <ul>
-        <li>本MODは有志による非公式パッチです。開発元・販売元とは一切関係ありません。</li>
-        <li>MODの導入は自己責任にてお願いいたします。</li>
-        <li>ゲーム本体の将来的な大型アップデートにより、一時的に動作しなくなる場合があります。その際は本ポータルサイトにて修正パッチを配布いたします。</li>
-      </ul>
-    `
+    "content": "\n      <h2>『Dead Age』完全日本語化MODについて</h2>\n      <p>『Dead Age』は、文明崩壊後の世界を生き抜くターン制コマンドバトルRPGです。キャンプ運営、仲間との人間関係、パーマデス、そしてマルチエンディングなど奥深いゲーム性を誇りますが、公式日本語は非対応（または機械翻訳）となっていました。</p>\n      <p>本MODでは、プレイヤーが没入できるよう<strong>全編のストーリー・セリフ・独白を洋画吹き替え風の自然な日本語に徹底ローカライズ</strong>。さらに機械翻訳特有の不自然な敵名（「レイジング・ベイグラント」「アンデッドラボアシスタント」等）や装備品・スキルの名称、UIレイアウトに至るまで完全に洗練しています。</p>\n\n      <blockquote>\n        <strong>💡 本MODの特徴:</strong><br>\n        ・<strong>完全自然なストーリー翻訳:</strong> 主人公ジャックのタフな独白、シェリフやトリッシュ、ハンクらの個性豊かな掛け合いを映画さながらの台詞回しに全面刷新<br>\n        ・<strong>モリサワ製 高品質ユニバーサルデザインフォント採用:</strong> 商用・再配布フリーの「BIZ UDPゴシック Bold」をUnityアセットに直接組み込み、見やすく美しいタイポグラフィを実現<br>\n        ・<strong>戦闘・敵名・装備の完全監修:</strong> 「耐久力」「会心率」「レジスト」「ニット帽」などゲーム用語として直感的な表記に統一<br>\n        ・<strong>ワンタッチ導入:</strong> ゲームフォルダにドラッグ＆ドロップするだけで即座にプレイ可能\n      </blockquote>\n\n      <h2>日本語化MODのスクリーンショット</h2>\n      <p>タイトル画面、サバイバル手帳、NPCたちとの熱い会話ドラマ、ショップや装備画面に至るまで、美しい日本語フォント（BIZ UDPゴシック）と自然な台詞回しで快適にプレイ可能です。</p>\n\n      <div style=\"display: flex; flex-direction: column; gap: 24px; margin: 24px 0;\">\n        <div>\n          <h4 style=\"margin-bottom: 8px; color: var(--text-heading, #fff);\">▼ タイトル画面（日本語メニュー表示）</h4>\n          <img src=\"/images/dead-age-preview-title.jpg\" alt=\"Dead Age 日本語化タイトル画面\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        </div>\n\n        <div>\n          <h4 style=\"margin-bottom: 8px; color: var(--text-heading, #fff);\">▼ ハンク＆リディアの会話シーン（映画吹き替え調の自然な台詞）</h4>\n          <img src=\"/images/dead-age-preview-hank-lydia.jpg\" alt=\"Dead Age ハンクのセリフ\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;\" />\n          <img src=\"/images/dead-age-preview-lydia.jpg\" alt=\"Dead Age リディアのセリフ\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 12px;\" />\n          <img src=\"/images/dead-age-preview-hank.jpg\" alt=\"Dead Age ハンクの掛け合い\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        </div>\n\n        <div>\n          <h4 style=\"margin-bottom: 8px; color: var(--text-heading, #fff);\">▼ ショップ＆アイテムインベントリ（UI・装備品名の最適化）</h4>\n          <img src=\"/images/dead-age-preview-shop.jpg\" alt=\"Dead Age ショップ画面\" style=\"width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\" />\n        </div>\n      </div>\n\n      <h2>MODの導入手順（ステップ解説）</h2>\n      <p>導入は非常にシンプルです。ダウンロードしたZIPファイルを解凍し、ゲームフォルダに上書きするだけで完了します。</p>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 1</span>\n        <h3>MODファイルのダウンロード</h3>\n        <p>下記ダウンロードエリアより、最新のMODファイル（<code>DeadAge_JP_Mod_v1.0.zip</code>）をダウンロードします。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 2</span>\n        <h3>ゲームのインストール先フォルダを開く</h3>\n        <p>Steamライブラリから『Dead Age』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>\n        <p>ゲームの実行ファイル（<code>DeadAge.exe</code>）や <code>DeadAge_Data</code> フォルダが存在するフォルダが開きます。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 3</span>\n        <h3>ファイルを上書き配置してゲーム起動</h3>\n        <p>ダウンロードしたZIPを解凍し、中にある <code>DeadAge_Data</code> フォルダを『Dead Age』のインストールフォルダにドラッグ＆ドロップして上書きしてください。</p>\n        <p>ゲームを起動し、言語設定（画面右上の国旗アイコン）で「中文（中国国旗）」を選択すると、日本語化が完全に反映されます。</p>\n      </div>\n\n      <h2>アンインストール方法（元の状態に戻す）</h2>\n      <p>いつでも元の初期状態（公式バニラ）に戻すことができます。<br>\n      Steamライブラリで『Dead Age』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」をクリックしてください。Steamによって公式ファイルが自動再ダウンロードされ、安全に復元されます。</p>\n\n      <h2>免責事項・注意事項</h2>\n      <div style=\"background: rgba(255, 255, 255, 0.05); padding: 18px 24px; border-radius: 8px; border-left: 4px solid var(--accent, #e53e3e); margin-top: 16px;\">\n        <ul style=\"margin: 0; padding-left: 20px; line-height: 1.8;\">\n          <li><strong>非公式パッチ:</strong> 本MODは一個人ファンによる有志の非公式日本語化パッチです。開発元（Silent Dreams）および販売元（Headup Games）とは一切関係ありません。公式サポートへのお問い合わせは固くお控えください。</li>\n          <li><strong>自己責任の原則:</strong> 本MODの導入および利用は、すべてご利用者様ご自身の責任において行ってください。本MODの使用により生じたいかなる不具合、セーブデータの破損、トラブル等に関しましても、制作者は一切の責任を負いかねます。大切なデータがある場合は事前のバックアップを推奨します。</li>\n          <li><strong>フォントライセンス:</strong> ゲーム内に組み込まれている日本語フォント「BIZ UDPゴシック」は、株式会社モリサワが提供するオープンソースフォント（SIL Open Font License 1.1）に基づき、正規に同梱・利用されています。</li>\n          <li><strong>著作権について:</strong> ゲーム本編のキャラクター、テキスト原案、画像、プログラム等の著作権はすべて原著作者に帰属します。本MODファイルの商用販売や無断再配布は禁止いたします。</li>\n        </ul>\n      </div>\n    "
+  },
+  {
+    "id": "high-on-life",
+    "title": "【High on Life】日本語化MOD 配布・導入手順ガイド（Steam / Game Pass対応）",
+    "summary": "Rick and Mortyのクリエイターが手掛ける異色コメディFPS『High on Life』の有志日本語化MODです。全字幕・手紙・UIの完全ローカライズ、フォント置換により快適にプレイ可能です。",
+    "category": "FPS / コメディ",
+    "game": "High on Life",
+    "version": "Ver 1.0 (2026.10.18)",
+    "date": "2026-10-18",
+    "featuredImage": "/images/high-on-life-hero.png",
+    "author": "JP Modding Team",
+    "download": {
+      "format": "PAKファイル (.pak)",
+      "size": "約 443 MB",
+      "gameVersion": "Steam / Xbox Game Pass 最新版",
+      "assetName": "Oregon-WindowsNoEditor_JP.pak",
+      "initialDownloads": 1,
+      "mainUrl": "https://github.com/moddencom/mod-portal/releases/download/v1.0.0/Oregon-WindowsNoEditor_JP.pak",
+      "mirrorUrl": "https://workupload.com/file/NQ2BQR9sRD9",
+      "supportUrl": "https://ofuse.me/o?uid=227788"
+    },
+    "content": "\n      <h2>『High on Life』日本語化MODについて</h2>\n      <p>『High on Life』は、軽快なトークと下品で強烈なギャグが魅力のSFアクションFPSですが、公式では日本語に対応していません。本MODを導入することで、ゲーム内の字幕、銃（ガトリアン）たちの掛け合い、アイテム説明、イベントレターなどがすべて自然な日本語で表示されるようになります。</p>\n\n      <blockquote>\n        <strong>💡 本MODの特徴:</strong><br>\n        ・ゲーム内全49箇所のフォントを読みやすい高品質日本語フォントに完全置換<br>\n        ・英語に巻き戻ってしまう不具合（ハッシュ値不一致）を完全修正済み<br>\n        ・字幕の文字見切れ・はみ出しを防ぐ最適化改行処理を適用\n      </blockquote>\n\n      <h2>日本語化MODのスクリーンショット</h2>\n      <p>ゲーム内の会話字幕やメニュー画面、各種UIが以下のように日本語で違和感なく表示されます。</p>\n      <img src=\"/images/hol-preview-gameplay.png\" alt=\"High on Life 日本語化ゲーム画面\" />\n\n      <h2>MODの導入手順（ステップ解説）</h2>\n      <p>導入は非常に簡単です。ダウンロードしたPAKファイルを指定のフォルダに配置するだけで完了します。</p>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 1</span>\n        <h3>MODファイルのダウンロード</h3>\n        <p>下記ダウンロードエリアより、最新のMODファイル（<code>Oregon-WindowsNoEditor_JP.pak</code>）をダウンロードします。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 2</span>\n        <h3>ゲームのインストール先フォルダを開く</h3>\n        <p>Steamライブラリから『High on Life』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>\n        <p>以下のフォルダを開いてください：<br>\n        <code>Oregon\\Content\\Paks\\~mods\\</code><br>\n        ※<code>~mods</code> フォルダが存在しない場合は、新規作成してください。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 3</span>\n        <h3>ファイルを配置してゲーム起動</h3>\n        <p>ダウンロードしたPAKファイルを <code>~mods</code> フォルダ内にそのままコピー＆ペーストします。ゲームを起動すると自動的に日本語化が適用されます。</p>\n      </div>\n\n      <h2>アンインストール方法</h2>\n      <p><code>~mods</code> フォルダに配置した <code>Oregon-WindowsNoEditor_JP.pak</code> を削除するだけで、安全に元の英語版に戻すことができます。</p>\n\n      <h2>免責事項・注意事項</h2>\n      <ul>\n        <li>本MODは有志による非公式パッチです。開発元・販売元とは一切関係ありません。</li>\n        <li>MODの導入は自己責任にてお願いいたします。</li>\n        <li>ゲーム本体の将来的な大型アップデートにより、一時的に動作しなくなる場合があります。その際は本ポータルサイトにて修正パッチを配布いたします。</li>\n      </ul>\n    "
   }
 ];

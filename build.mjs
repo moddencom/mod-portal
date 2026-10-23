@@ -3,7 +3,12 @@
  * `node build.mjs` を実行すると、全HTMLページに最新記事リストとデフォルト詳細を直接埋め込みます。
  */
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { posts } from './src/posts/data.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function createCardsHTML(items) {
   return items.map(post => `
@@ -38,34 +43,22 @@ const cardsHTML = createCardsHTML(posts);
 const countText = `掲載数: ${posts.length}件`;
 
 for (const file of ['index.html', 'mods.html']) {
-  let html = fs.readFileSync(file, 'utf8');
+  const filePath = path.join(__dirname, file);
+  let html = fs.readFileSync(filePath, 'utf8');
   html = html.replace(/<span class="section-count" id="article-count">.*?<\/span>/s, `<span class="section-count" id="article-count">${countText}</span>`);
   html = html.replace(/<!-- ARTICLES_START -->[\s\S]*?<!-- ARTICLES_END -->/, `<!-- ARTICLES_START -->\n${cardsHTML}\n          <!-- ARTICLES_END -->`);
-  fs.writeFileSync(file, html, 'utf8');
+  fs.writeFileSync(filePath, html, 'utf8');
 }
 
 // post.html の初期状態にも先頭記事をプリレンダリング（SEO＆即時表示対応）
 const firstPost = posts[0];
 if (firstPost) {
-  let postHtml = fs.readFileSync('post.html', 'utf8');
-  postHtml = postHtml.replace(/<span id="breadcrumb-title">.*?<\/span>/, `<span id="breadcrumb-title">${firstPost.title}</span>`);
-  postHtml = postHtml.replace(/<span class="category-badge" id="post-category">.*?<\/span>/, `<span class="category-badge" id="post-category">${firstPost.category}</span>`);
-  postHtml = postHtml.replace(/<span class="post-date" id="post-date">.*?<\/span>/, `<span class="post-date" id="post-date">${firstPost.date}</span>`);
-  postHtml = postHtml.replace(/<span class="post-version" id="post-version">.*?<\/span>/, `<span class="post-version" id="post-version">${firstPost.version}</span>`);
-  postHtml = postHtml.replace(/<h1 class="post-title" id="post-title">.*?<\/h1>/, `<h1 class="post-title" id="post-title">${firstPost.title}</h1>`);
-  postHtml = postHtml.replace(/<p class="post-lead" id="post-summary">.*?<\/p>/, `<p class="post-lead" id="post-summary">${firstPost.summary}</p>`);
-  postHtml = postHtml.replace(/<img id="post-featured-image" src=".*?" alt=".*?"/, `<img id="post-featured-image" src="${firstPost.featuredImage}" alt="${firstPost.title}"`);
-  postHtml = postHtml.replace(/<!-- POST_BODY_START -->[\s\S]*?<!-- POST_BODY_END -->/, `<!-- POST_BODY_START -->\n${firstPost.content}\n        <!-- POST_BODY_END -->`);
-  postHtml = postHtml.replace(/<h3 class="download-title" id="dl-title">.*?<\/h3>/, `<h3 class="download-title" id="dl-title">『${firstPost.game}』${firstPost.version}</h3>`);
-  postHtml = postHtml.replace(/<span class="dl-val" id="dl-format">.*?<\/span>/, `<span class="dl-val" id="dl-format">${firstPost.download.format}</span>`);
-  postHtml = postHtml.replace(/<span class="dl-val" id="dl-size">.*?<\/span>/, `<span class="dl-val" id="dl-size">${firstPost.download.size}</span>`);
-  postHtml = postHtml.replace(/<span class="dl-val" id="dl-game-version">.*?<\/span>/, `<span class="dl-val" id="dl-game-version">${firstPost.download.gameVersion}</span>`);
-  postHtml = postHtml.replace(/<span id="dl-count-num">.*?<\/span>/, `<span id="dl-count-num">${(firstPost.download.initialDownloads || 0).toLocaleString()}</span>`);
-  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-main"/, `<a href="${firstPost.download.mainUrl}" id="dl-button-main"`);
-  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-mirror"/, `<a href="${firstPost.download.mirrorUrl}" id="dl-button-mirror"`);
-  postHtml = postHtml.replace(/<a href=".*?" id="dl-button-support"/, `<a href="${firstPost.download.supportUrl}" id="dl-button-support"`);
-  postHtml = postHtml.replace(/<a href=".*?" id="dl-report-link"/, `<a href="/report.html?id=${firstPost.id}" id="dl-report-link"`);
-  fs.writeFileSync('post.html', postHtml, 'utf8');
+  const postHtmlPath = path.join(__dirname, 'post.html');
+  let postHtml = fs.readFileSync(postHtmlPath, 'utf8');
+  postHtml = postHtml.replace(/<title>.*?<\/title>/, `<title>${firstPost.title} | Modden</title>`);
+  postHtml = postHtml.replace(/<h1 id="post-title" class="post-title">.*?<\/h1>/, `<h1 id="post-title" class="post-title">${firstPost.title}</h1>`);
+  postHtml = postHtml.replace(/<div id="post-body" class="post-body">[\s\S]*?<\/div>\s*<!-- \/post-body -->/, `<div id="post-body" class="post-body">\n${firstPost.content}\n          </div>\n          <!-- /post-body -->`);
+  fs.writeFileSync(postHtmlPath, postHtml, 'utf8');
 }
 
-console.log('Successfully pre-rendered HTML into index.html, mods.html, and post.html!');
+console.log(`Successfully built all portal pages! Total posts: ${posts.length}`);
