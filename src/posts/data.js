@@ -5,6 +5,28 @@
  */
 export const posts = [
   {
+  "id": "12-is-better-than-6-japanese",
+  "title": "【12 is Better Than 6】完全日本語化MOD 配布・導入ガイド（Steam版対応・19世紀活版印刷風フォント同梱）",
+  "summary": "1830年代の西部開拓時代を舞台にした見下ろし型ハードボイルド・ステルスアクション『12 is Better Than 6』の完全日本語化MODです。全編（UI・全会話・字幕・操作説明）を西部劇映画調の渋い日本語で完全網羅。手描きスケッチの世界観にマッチする「しっぽり明朝 B1」（商用利用可能）を同梱しています。",
+  "category": "日本語化",
+  "game": "12 is Better Than 6",
+  "version": "Ver 1.0 (2026.10.24)",
+  "date": "2026-10-24",
+  "featuredImage": "/images/12ibt6_header.png",
+  "author": "JP Modding Team",
+  "download": {
+    "format": "ZIPアーカイブ (.zip)",
+    "size": "約 14.6 MB",
+    "gameVersion": "Steam 最新版対応 (High/Low両対応)",
+    "assetName": "12_is_Better_Than_6_Japanese_MOD_v1.0.zip",
+    "initialDownloads": 0,
+    "mainUrl": "https://mod-portal.pages.dev/downloads/12_is_Better_Than_6_Japanese_MOD_v1.0.zip",
+    "mirrorUrl": "",
+    "supportUrl": "https://ofuse.me/o?uid=227788"
+  },
+  "content": "\n      <h2>『12 is Better Than 6』完全日本語化MODについて</h2>\n      <p>1830年代の血と硝煙が漂う北米・メキシコ国境の荒野を舞台にした、手描きスケッチ風見下ろし型ハードボイルド・ステルスアクション<strong>『12 is Better Than 6』</strong>（トゥエルブ・イズ・ベター・ザン・シックス）。</p>\n      <p>リボルバーの撃鉄（コック）を一手ずつ起こして射撃する本格的なガンアクションと、一撃必殺の緊張感が魅力の本作ですが、公式では日本語が未サポートとなっていました。</p>\n      <p>本MODは、ゲーム内の全UI、全幕にわたるストーリー会話、字幕、操作チュートリアル、Perk説明に至るまで<strong>全編を映画の吹き替え調（乾いた無法者たちの男言葉）で完全日本語化</strong>したMODです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>全編100%日本語化:</strong> メインストーリー、サブ会話、全Perk、武器、設定画面まで完全網羅<br>\n        ・<strong>世界観に合わせた19世紀活版印刷風フォント同梱:</strong> 文字端にインクだまりを持つ「しっぽり明朝 B1」（SIL Open Font License）を採用<br>\n        ・<strong>簡単導入・安全設計:</strong> ゲームフォルダへファイルを2つ上書きするだけで即座に反映<br>\n        ・<strong>代替フォント同梱:</strong> お好みに合わせて「Zen オールド明朝」や硬筆調の「クレー One」への切り替えも可能\n      </blockquote>\n\n      <h2>MODの導入手順（ステップ解説）</h2>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 1</span>\n        <h3>MODファイルのダウンロード</h3>\n        <p>本ページ下部のダウンロードエリアより、MODファイル（<code>12_is_Better_Than_6_Japanese_MOD_v1.0.zip</code>）をダウンロードして解凍します。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 2</span>\n        <h3>ゲームのインストール先フォルダを開く</h3>\n        <p>Steamライブラリから『12 is Better Than 6』を右クリック ＞「管理」＞「ローカルファイルを閲覧」をクリックします。</p>\n        <p>フォルダ内の「<code>12ibt6Hi</code>」（通常版）または「<code>12ibt6Low</code>」（軽量版）を開きます。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 3</span>\n        <h3>ファイルをコピーして上書き</h3>\n        <p>解凍したMODフォルダ内にある以下の2つのファイルを「<code>12ibt6Hi</code>」（またはLow）フォルダへ上書きコピーします：</p>\n        <ul>\n          <li><code>localization.csv</code></li>\n          <li><code>NotoSerifCJKsc-Regular.otf</code></li>\n        </ul>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 4</span>\n        <h3>ゲーム内設定で「日本語」を選択</h3>\n        <p>ゲームを起動し、メインメニューの「<code>Settings</code> (設定)」＞「<code>Language</code> (言語)」から「<code>日本語</code>」を選択します。直ちに全てのテキストが美しい日本語に切り替わります！</p>\n      </div>\n\n      <h2>フォントの変更について（カスタマイズ）</h2>\n      <p>MODパッケージ内の「<code>alternative_fonts</code>」フォルダには、以下の代替フォントが同梱されています：</p>\n      <ul>\n        <li><strong>Zen オールド明朝 (ZenOldMincho):</strong> 小さなUI文字でも抜群の視認性を誇る伝統的明朝体</li>\n        <li><strong>クレー One (Klee One):</strong> 本作のボールペン手描きスケッチアートと調和する硬筆ペン字調</li>\n      </ul>\n      <p>フォントを変更したい場合は、お好みのフォントファイルを「<code>NotoSerifCJKsc-Regular.otf</code>」にリネームしてゲームフォルダへ上書きしてください。</p>\n\n      <h2>アンインストール方法</h2>\n      <p>Steamのライブラリから『12 is Better Than 6』を右クリック ＞「プロパティ」＞「インストール済みファイル」＞「ゲームファイルの整合性を確認」を実行することで、いつでも初期の英語版へ復元できます。</p>\n    "
+},
+  {
     "id": "pony-island-japanese",
     "title": "【Pony Island】完全日本語化MOD 配布・導入手順ガイド（Steam版対応・全編美麗ビットマップフォント表示）",
     "summary": "悪魔のアーケードゲームに挑むメタフィクションサスペンス傑作『Pony Island』の完全日本語化MODです。未公開のまま眠っていた公式日本語データ約9割を完全補完し、プログラム修正により内包ビットマップフォント描画を有効化。悪魔ルシファーの皮肉、壊れたレトロOS、パズル、ストーリー全編を美麗なドット絵日本語で楽しめます。",
