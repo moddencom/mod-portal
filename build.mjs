@@ -60,6 +60,23 @@ if (firstPost) {
   postHtml = postHtml.replace(/<h1 class="post-title" id="post-title">.*?<\/h1>/, `<h1 class="post-title" id="post-title">${firstPost.title}</h1>`);
   postHtml = postHtml.replace(/<p class="post-lead" id="post-summary">.*?<\/p>/, `<p class="post-lead" id="post-summary">${firstPost.summary}</p>`);
   postHtml = postHtml.replace(/<!-- POST_BODY_START -->[\s\S]*?<!-- POST_BODY_END -->/, `<!-- POST_BODY_START -->\n${firstPost.content}\n        <!-- POST_BODY_END -->`);
+  if (firstPost.download) {
+    if (firstPost.download.format) {
+      postHtml = postHtml.replace(/<span class="dl-val" id="dl-format">.*?<\/span>/, `<span class="dl-val" id="dl-format">${firstPost.download.format}</span>`);
+    }
+    if (firstPost.download.size) {
+      postHtml = postHtml.replace(/<span class="dl-val" id="dl-size">.*?<\/span>/, `<span class="dl-val" id="dl-size">${firstPost.download.size}</span>`);
+    }
+    if (firstPost.download.gameVersion) {
+      postHtml = postHtml.replace(/<span class="dl-val" id="dl-game-version">.*?<\/span>/, `<span class="dl-val" id="dl-game-version">${firstPost.download.gameVersion}</span>`);
+    }
+    if (firstPost.download.mainUrl) {
+      postHtml = postHtml.replace(/href=".*?" id="dl-button-main"/, `href="${firstPost.download.mainUrl}" id="dl-button-main"`);
+    }
+    if (firstPost.download.mirrorUrl) {
+      postHtml = postHtml.replace(/href=".*?" id="dl-button-mirror"/, `href="${firstPost.download.mirrorUrl}" id="dl-button-mirror"`);
+    }
+  }
   fs.writeFileSync(postHtmlPath, postHtml, 'utf8');
 }
 
