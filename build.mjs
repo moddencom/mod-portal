@@ -59,7 +59,7 @@ if (firstPost) {
   postHtml = postHtml.replace(/<span id="breadcrumb-title">.*?<\/span>/, `<span id="breadcrumb-title">${firstPost.title}</span>`);
   postHtml = postHtml.replace(/<h1 class="post-title" id="post-title">.*?<\/h1>/, `<h1 class="post-title" id="post-title">${firstPost.title}</h1>`);
   postHtml = postHtml.replace(/<p class="post-lead" id="post-summary">.*?<\/p>/, `<p class="post-lead" id="post-summary">${firstPost.summary}</p>`);
-  postHtml = postHtml.replace(/<div class="post-content" id="post-body">[\s\S]*?<\/div>\s*<!-- \/post-body -->|<!-- POST_BODY_START -->[\s\S]*?<\/div>/, `<!-- POST_BODY_START -->\n${firstPost.content}\n      </div>`);
+  postHtml = postHtml.replace(/<!-- POST_BODY_START -->[\s\S]*?<!-- POST_BODY_END -->/, `<!-- POST_BODY_START -->\n${firstPost.content}\n        <!-- POST_BODY_END -->`);
   fs.writeFileSync(postHtmlPath, postHtml, 'utf8');
 }
 
