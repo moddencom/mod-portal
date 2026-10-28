@@ -5,6 +5,29 @@
  */
 export const posts = [
   {
+  "id": "home-unique-horror-japanese",
+  "title": "【Home】完全日本語化MOD 配布・導入ガイド（Epic Games / Steam対応・美麗レトロドットフォント同梱）",
+  "summary": "プレイヤーの選択と行動で結末と真相が変化する名作サイコロジカル・ピクセルホラーADV『Home』の完全日本語化MODです。ストーリー会話・選択肢プロンプト・アイテム調査・手紙・全UI・エンディングまで全編（2,446スロット）を自然な日本語で完全網羅。作品の雰囲気に調和するレトロピクセルフォント「DotGothic16」を同梱しています。",
+  "category": "日本語化",
+  "game": "Home - A Unique Horror Adventure",
+  "version": "Ver 1.0.0 (2026.10.28)",
+  "date": "2026-10-28",
+  "featuredImage": "/images/home_header.png",
+  "author": "JP Modding Team",
+  "download": {
+    "format": "ワンクリックパッチャー内包 ZIPアーカイブ (.zip)",
+    "size": "約 28.8 MB",
+    "gameVersion": "Epic Games Store / Steam 最新版対応 (GameMaker 2.3+)",
+    "assetName": "Home_Japanese_Mod_v1.0.0.zip",
+    "initialDownloads": 0,
+    "mainUrl": "https://mod-portal.pages.dev/downloads/Home_Japanese_Mod_v1.0.0.zip",
+    "mirrorUrl": "",
+    "supportUrl": "https://ofuse.me/o?uid=227788"
+  },
+  "content": "\n      <h2>『Home - A Unique Horror Adventure』完全日本語化MODについて</h2>\n      <p>見知らぬ暗闇の部屋で目覚めた主人公が、自らの足取りと記憶を辿りながら我が家（Home）を目指すサイコロジカル・ピクセルホラーADV<strong>『Home - A Unique Horror Adventure』</strong>。</p>\n      <p>プレイヤーが「何を調べ、何を無視したか」「アイテムを拾ったか否か」によって物語の解釈と結末がダイナミックに分岐する名作ですが、これまで完全な日本語環境でプレイすることはできませんでした。</p>\n      <p>本MODは、ゲーム内の全ストーリー台詞、選択肢プロンプト、アイテム調査文、手紙、メニューUI、エンディング要約に至るまで<strong>全編（全2,446スロット）を洗練された自然な日本語で完全網羅</strong>したModです。</p>\n\n      <blockquote>\n        <strong>💡 本MODの主な特徴:</strong><br>\n        ・<strong>全編完全日本語化:</strong> 本編会話、選択肢プロンプト（「はい / いいえ」含む）、手紙、UIまで100%日本語対応<br>\n        ・<strong>世界観に調和するピクセルフォント同梱:</strong> 16px基準の美しいドット日本語フォント「DotGothic16」（SIL Open Font License 1.1）を採用<br>\n        ・<strong>自動改行・レイアウト最適化:</strong> ダイアログボックスの枠内に美しく収まるインテリジェント折り返し処理を実装<br>\n        ・<strong>ワンクリック簡単導入:</strong> 付属のパッチャーを実行するだけで自動検出・安全パッチ適用（バックアップ機能付き）\n      </blockquote>\n\n      <div style=\"background: rgba(220, 53, 69, 0.1); border-left: 4px solid #dc3545; padding: 16px; margin: 24px 0; border-radius: 4px;\">\n        <strong style=\"color: #dc3545; font-size: 1.05rem;\">⚠️ 【重要】ポストモーテム モードに関する注意書き</strong><br>\n        <p style=\"margin: 8px 0 0 0; line-height: 1.6;\">\n          ゲーム内の「ポストモーテム モード（開発者コメンタリー機能 / 吹き出し「！」）」は、<strong>ゲーム自体の元々の仕様上、字幕表示機能がそもそも実装されておらず音声（英語）のみが再生される仕様</strong>となっています。<br>\n          そのため、本MODでもコメンタリー字幕の表示は対象外（非対応）となります。<br>\n          開発者の英語音声が流れてホラーの雰囲気を壊してしまうのを防ぐため、<strong>初回プレイ時はポーズ画面の設定（OPTIONS）から【ポストモーテム モード：オフ (OFF)】にしておくことを強く推奨します</strong>。<br>\n          ※本モードはクリア後のおまけ機能であり、オフにしても本編のストーリー、謎解き、エンディング分岐には一切影響しません。\n        </p>\n      </div>\n\n      <h2>MODの導入手順（ステップ解説）</h2>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 1</span>\n        <h3>MODファイルのダウンロードと解凍</h3>\n        <p>本ページ下部のダウンロードエリアより、MODファイル（<code>Home_Japanese_Mod_v1.0.0.zip</code>）をダウンロードして解凍します。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 2</span>\n        <h3>日本語化パッチャーの実行</h3>\n        <p>解凍したフォルダ内にある「<strong><code>日本語化パッチ適用.bat</code></strong>」（または <code>Home_JP_Patcher.exe</code>）をダブルクリックで実行します。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 3</span>\n        <h3>ワンクリック適用の実行</h3>\n        <p>パッチャーがゲームのインストール先（Epic Games版 / Steam版）を自動検出します。<br>\n        画面の案内に従い、「<strong><code>1</code></strong>」を入力して <kbd>Enter</kbd> を押すと、自動的に元の <code>data.win.bak</code>（バックアップ）が作成され、高速に日本語化パッチが適用されます。</p>\n      </div>\n\n      <div class=\"step-box\">\n        <span class=\"step-num\">STEP 4</span>\n        <h3>ゲームの起動</h3>\n        <p>ランチャー（Epic Games / Steam）から通常どおりゲームを起動します。美麗なドット絵日本語フォントでゲームが楽しめます！</p>\n      </div>\n\n      <h2>アンインストール方法（元の英語に戻す場合）</h2>\n      <p>パッチャーを再度起動し、「<strong><code>2: オリジナルの英語状態に戻す</code></strong>」を選択して Enter を押すだけで、自動作成されたバックアップから即座に元の状態へ復元されます。</p>\n\n      <h2>ゲーム内スクリーンショット</h2>\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;\">\n        <a href=\"/images/home_header.png\" target=\"_blank\">\n          <img src=\"/images/home_header.png\" alt=\"序盤のストーリーダイアログ\" style=\"width:100%; border-radius:6px; border:1px solid #ddd;\" loading=\"lazy\" />\n        </a>\n        <a href=\"/images/home_ss_postmortem.png\" target=\"_blank\">\n          <img src=\"/images/home_ss_postmortem.png\" alt=\"懐中電灯での探索風景\" style=\"width:100%; border-radius:6px; border:1px solid #ddd;\" loading=\"lazy\" />\n        </a>\n      </div>\n  "
+},
+
+  {
   "id": "12-is-better-than-6-japanese",
   "title": "【12 is Better Than 6】完全日本語化MOD 配布・導入ガイド（Steam版対応・19世紀活版印刷風フォント同梱）",
   "summary": "1830年代の西部開拓時代を舞台にした見下ろし型ハードボイルド・ステルスアクション『12 is Better Than 6』の完全日本語化MODです。全編（UI・全会話・字幕・操作説明）を西部劇映画調の渋い日本語で完全網羅。手描きスケッチの世界観にマッチする「しっぽり明朝 B1」（商用利用可能）を同梱しています。",

@@ -56,8 +56,10 @@ if (firstPost) {
   const postHtmlPath = path.join(__dirname, 'post.html');
   let postHtml = fs.readFileSync(postHtmlPath, 'utf8');
   postHtml = postHtml.replace(/<title>.*?<\/title>/, `<title>${firstPost.title} | Modden</title>`);
-  postHtml = postHtml.replace(/<h1 id="post-title" class="post-title">.*?<\/h1>/, `<h1 id="post-title" class="post-title">${firstPost.title}</h1>`);
-  postHtml = postHtml.replace(/<div id="post-body" class="post-body">[\s\S]*?<\/div>\s*<!-- \/post-body -->/, `<div id="post-body" class="post-body">\n${firstPost.content}\n          </div>\n          <!-- /post-body -->`);
+  postHtml = postHtml.replace(/<span id="breadcrumb-title">.*?<\/span>/, `<span id="breadcrumb-title">${firstPost.title}</span>`);
+  postHtml = postHtml.replace(/<h1 class="post-title" id="post-title">.*?<\/h1>/, `<h1 class="post-title" id="post-title">${firstPost.title}</h1>`);
+  postHtml = postHtml.replace(/<p class="post-lead" id="post-summary">.*?<\/p>/, `<p class="post-lead" id="post-summary">${firstPost.summary}</p>`);
+  postHtml = postHtml.replace(/<div class="post-content" id="post-body">[\s\S]*?<\/div>\s*<!-- \/post-body -->|<!-- POST_BODY_START -->[\s\S]*?<\/div>/, `<!-- POST_BODY_START -->\n${firstPost.content}\n      </div>`);
   fs.writeFileSync(postHtmlPath, postHtml, 'utf8');
 }
 
