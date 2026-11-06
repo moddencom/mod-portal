@@ -1,8 +1,8 @@
 import { posts } from './posts/data.js';
 import { initAdRotator } from './ads.js';
 
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1561708315057197066/NZB16CB9d4muf7HrjD_XSMXt_Dhz9-zpJjIk0QFh80mV6oWq_ovhjBoM-K1KK-oGqf-x';
-const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB (Discord Webhook上限)
+const REPORT_API_URL = '/api/report';
+const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8MB (アップロード上限)
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('report-form');
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formData.append('payload_json', JSON.stringify(payload));
           formData.append('files[0]', attachedFile, fileName);
 
-          response = await fetch(DISCORD_WEBHOOK_URL, {
+          response = await fetch(REPORT_API_URL, {
             method: 'POST',
             body: formData
           });
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
 
-          response = await fetch(DISCORD_WEBHOOK_URL, {
+          response = await fetch(REPORT_API_URL, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -285,7 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!response.ok) {
-          throw new Error(`Discord APIエラー: ${response.status}`);
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.error || `APIエラー: ${response.status}`);
         }
 
         // 成功
