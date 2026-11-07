@@ -169,6 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       if (errorMsg) errorMsg.style.display = 'none';
 
+      // スパムBOT対策（ハニーポット検査）
+      const hpValue = document.getElementById('hp_website')?.value || '';
+      if (hpValue) {
+        // BOTが隠し項目に記入した場合は擬似的に送信完了に見せかけて何もしない
+        form.style.display = 'none';
+        if (successBox) successBox.style.display = 'block';
+        return;
+      }
+
       const selectedModId = modSelect.value;
       if (!selectedModId) {
         alert('対象のMODを選択してください。');
@@ -179,12 +188,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const postObj = posts.find(p => p.id === selectedModId);
       const modName = postObj ? `『${postObj.game}』${postObj.title}` : 'その他・サイト全般';
       const reportType = document.querySelector('input[name="report_type"]:checked')?.value || '誤字・誤訳・未翻訳';
-      const nickname = document.getElementById('report-name').value.trim() || '名無しサバイバー';
-      const content = document.getElementById('report-content').value.trim();
+      const rawNickname = document.getElementById('report-name').value.trim();
+      const nickname = (rawNickname.length > 50 ? rawNickname.slice(0, 50) : rawNickname) || '名無しサバイバー';
+      let content = document.getElementById('report-content').value.trim();
       const imageUrlInput = document.getElementById('report-image')?.value.trim() || '';
 
       if (!content) {
         alert('報告内容を入力してください。');
+        return;
+      }
+
+      if (content.length > 3000) {
+        alert('報告内容が長すぎます（最大3,000文字まで）。簡潔にまとめて送信してください。');
         return;
       }
 

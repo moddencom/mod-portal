@@ -74,6 +74,12 @@
 
         <!-- 入力フォーム -->
         <form id="report-form" class="report-form-body">
+          <!-- スパムBOT対策用ハニーポット（人間には非表示） -->
+          <div style="display: none !important;" aria-hidden="true">
+            <label for="hp_website">Leave this field blank</label>
+            <input type="text" id="hp_website" name="hp_website" tabindex="-1" autocomplete="off">
+          </div>
+
           <!-- 対象MOD選択 -->
           <div class="form-group">
             <label for="report-mod" class="form-label">
